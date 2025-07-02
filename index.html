@@ -58,7 +58,7 @@
         <div class="flex justify-between h-16">
           <div class="flex items-center">
             <a href="#home" class="flex-shrink-0 flex items-center">
-              <img src="待填路径" alt="LOGO" class="h-12 mr-2">
+              <img src="public/images/LOGO.png" alt="LOGO" class="h-12 mr-2">
               <span class="text-xl font-bold lang" key="companyName">宇讯通光电</span>
             </a>
             <div class="hidden md:ml-10 md:flex md:space-x-8">
@@ -75,6 +75,9 @@
               <a href="#contact"
                 class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom lang"
                 key="navContact">联系我们</a>
+              <a href="public/file/2024年宇讯通彩页.pdf"
+                class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom lang"
+                key="navDownload" download>资料下载</a>
             </div>
           </div>
           <div class="flex items-center">
@@ -126,6 +129,9 @@
             key="navCompanyDetail">公司详细介绍</a>
           <a href="#contact" class="text-white hover:text-accent block px-3 py-2 text-base font-medium lang"
             key="navContact">联系我们</a>
+          <a href="public/file/2024年宇讯通彩页.pdf"
+            class="text-white hover:text-accent block px-3 py-2 text-base font-medium lang" key="navDownload"
+            download>资料下载</a>
         </div>
       </div>
     </nav>
@@ -307,7 +313,7 @@
   <section id="products" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-4 lang" key="productsTitle">产品中心</h2>
+        <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-4 lang" key="productsTitle">热门产品</h2>
         <p class="text-gray-600 max-w-3xl mx-auto text-lg lang" key="productsSubtitle">
           提供光纤研磨、组装、检测设备及光通信器件全系列产品
         </p>
@@ -377,7 +383,7 @@
               <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span class="lang"
                   key="product1Spec2">转速可调：0-150转/分钟</span></p>
             </div>
-            <a href="#product-detail-1"
+            <a href="products.html."
               class="mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium lang"
               key="viewDetails">
               查看详情
@@ -573,7 +579,7 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="#"
+        <a href="products.html"
           class="inline-flex items-center px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-md font-medium transition-custom lang"
           key="viewAllProducts">
           查看全部产品
@@ -666,7 +672,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2">
-          <form class="bg-white p-8 rounded-xl shadow-lg">
+          <form class="bg-white p-8 rounded-xl shadow-lg" onsubmit="submitForm(event)">
             <h3 class="text-2xl font-bold mb-6 text-primary lang" key="sendInquiry">发送咨询</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -708,6 +714,34 @@
               提交咨询
             </button>
           </form>
+
+          <script>
+            function submitForm(event) {
+              event.preventDefault();
+
+              // 获取表单数据
+              const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const phone = document.getElementById('phone').value;
+              const subject = document.getElementById('subject').value;
+              const message = document.getElementById('message').value;
+
+              // 验证必填字段
+              if (!name || !email || !message) {
+                alert('请填写姓名、邮箱和留言内容');
+                return;
+              }
+
+              // 构建邮件内容
+              const mailBody = `姓名: ${name}\n邮箱: ${email}\n电话: ${phone || '未提供'}\n主题: ${subject || '无'}\n\n留言内容:\n${message}`;
+
+              // 构建mailto链接
+              const mailtoLink = `mailto:329461572@qq.com?cc=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject || '咨询留言')}&body=${encodeURIComponent(mailBody)}`;
+
+              // 打开邮件客户端
+              window.location.href = mailtoLink;
+            }
+          </script>
         </div>
 
         <div>
@@ -769,10 +803,11 @@
             <h3 class="text-2xl font-bold mb-6 text-primary lang" key="followUs">关注我们</h3>
             <div class="flex space-x-4">
               <a href="#"
-                class="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-custom">
+                class="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-custom"
+                onclick="showImage()">
                 <i class="fa fa-weixin text-xl"></i>
               </a>
-              <a href="#"
+              <!--       <a href="#"
                 class="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-custom">
                 <i class="fa fa-weibo text-xl"></i>
               </a>
@@ -783,7 +818,7 @@
               <a href="#"
                 class="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-custom">
                 <i class="fa fa-youtube-play text-xl"></i>
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
@@ -797,24 +832,18 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         <div>
           <div class="flex items-center mb-6">
-            <i class="fa fa-connectdevelop text-3xl mr-2"></i>
+            <img src="public/images/LOGO.png" alt="LOGO" class="h-12 mr-2">
             <span class="text-xl font-bold lang" key="companyName">宇讯通光电</span>
           </div>
           <p class="text-white/70 mb-6 lang" key="companyIntro">
             专业从事光通信器件及设备研发、生产和销售的高新技术企业，为全球客户提供优质的光纤通信解决方案。
           </p>
           <div class="flex space-x-4">
-            <a href="#" class="text-white/70 hover:text-white transition-custom">
+            <a href="#" class="text-white/70 hover:text-white transition-custom" onclick="showImage()">
               <i class="fa fa-weixin text-xl"></i>
             </a>
-            <a href="#" class="text-white/70 hover:text-white transition-custom">
-              <i class="fa fa-weibo text-xl"></i>
-            </a>
-            <a href="#" class="text-white/70 hover:text-white transition-custom">
-              <i class="fa fa-linkedin text-xl"></i>
-            </a>
-            <a href="#" class="text-white/70 hover:text-white transition-custom">
-              <i class="fa fa-youtube-play text-xl"></i>
+            <a href="#" class="text-white/70 hover:text-white transition-custom" onclick="showImage()">
+              <i class="fa fa-douyin text-xl"></i>
             </a>
           </div>
         </div>
@@ -822,15 +851,15 @@
         <div>
           <h4 class="text-lg font-semibold mb-6 lang" key="productCenter">产品中心</h4>
           <ul class="space-y-3">
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang"
+            <li><a href="products.html" class="text-white/70 hover:text-white transition-custom lang"
                 key="productCategory1">光纤研磨设备</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang"
+            <li><a href="products.html" class="text-white/70 hover:text-white transition-custom lang"
                 key="productCategory2">光纤组装设备</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang"
+            <li><a href="products.html" class="text-white/70 hover:text-white transition-custom lang"
                 key="productCategory3">光纤检测设备</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang"
+            <li><a href="products.html" class="text-white/70 hover:text-white transition-custom lang"
                 key="productCategory4">光通信器件</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang"
+            <li><a href="products.html" class="text-white/70 hover:text-white transition-custom lang"
                 key="productCategory5">光纤工具</a></li>
           </ul>
         </div>
@@ -838,11 +867,13 @@
         <div>
           <h4 class="text-lg font-semibold mb-6 lang" key="aboutUs">关于我们</h4>
           <ul class="space-y-3">
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem1">公司简介</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem2">企业文化</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem3">技术实力</a></li>
+            <li><a href="#about" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem1">公司简介</a>
+            </li>
+            <li><a href="#company-detail" class="text-white/70 hover:text-white transition-custom lang"
+                key="aboutItem2">企业文化</a></li>
+            <!--             <li><a href="#" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem3">技术实力</a></li>
             <li><a href="#" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem4">生产基地</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem5">新闻动态</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-custom lang" key="aboutItem5">新闻动态</a></li> -->
           </ul>
         </div>
 
@@ -882,7 +913,7 @@
             <a href="#" class="text-white/50 hover:text-white text-sm transition-custom lang"
               key="privacyPolicy">隐私政策</a>
             <a href="#" class="text-white/50 hover:text-white text-sm transition-custom lang" key="termsOfUse">使用条款</a>
-            <a href="#" class="text-white/50 hover:text-white text-sm transition-custom lang" key="sitemap">网站地图</a>
+            <!-- <a href="#" class="text-white/50 hover:text-white text-sm transition-custom lang" key="sitemap">网站地图</a> -->
           </div>
         </div>
       </div>
@@ -1022,7 +1053,7 @@
         stat4: "销售网络",
         companyAward1: "高新技术企业",
         companyAward2: "创新型中小企业",
-        productsTitle: "产品中心",
+        productsTitle: "热门产品",
         productsSubtitle: "提供光纤研磨、组装、检测设备及光通信器件全系列产品",
         serviceAdvantages: "我们的服务优势",
         serviceAdvantagesDesc: "专业的技术研发、完善的质量保证、个性化的定制服务和专业的客户支持，为客户提供一站式的解决方案。",
@@ -1120,7 +1151,8 @@
         companyIntro: "专业从事光通信器件及设备研发、生产和销售的高新技术企业，为全球客户提供优质的光纤通信解决方案。",
         privacyPolicy: "隐私政策",
         termsOfUse: "使用条款",
-        sitemap: "网站地图"
+        sitemap: "网站地图",
+        navDownload: "资料下载"
       },
       en: {
         companyName: "Shenzhen Yuxuntong Photoelectricity Co., Ltd.",
@@ -1149,7 +1181,7 @@
         stat4: "Global Sales Network",
         companyAward1: "High-tech Enterprise",
         companyAward2: "Innovative Small and Medium-sized Enterprise",
-        productsTitle: "Product Center",
+        productsTitle: "Popular Product",
         serviceAdvantages: "Our Service Advantages",
         serviceAdvantagesDesc: "Professional technical R&D, perfect quality assurance, personalized customization services, and professional customer support to provide customers with one-stop solutions.",
         innovation: "Innovative Technology",
@@ -1246,7 +1278,8 @@
         companyIntro: "A high-tech enterprise specializing in the R&D, production and sales of optical communication devices and equipment, providing high-quality fiber optic communication solutions for global customers.",
         privacyPolicy: "Privacy Policy",
         termsOfUse: "Terms of Use",
-        sitemap: "Site Map"
+        sitemap: "Site Map",
+        navDownload: "Downloads"
       }
     };
 
@@ -1314,6 +1347,32 @@
 
     // 初始化
     initLanguage();
+    // 显示图片的方法
+    function showImage() {
+      const img = document.createElement('img');
+      img.src = 'public/images/weixin.png';
+      img.style.maxWidth = '100%';
+      img.style.maxHeight = '100%';
+
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.appendChild(img);
+
+      overlay.onclick = function () {
+        document.body.removeChild(overlay);
+      };
+
+      document.body.appendChild(overlay);
+    }
+
   </script>
 </body>
 

@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宇讯通光电 - 产品中心</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0A2463',
+            secondary: '#3E92CC',
+            accent: '#F18805',
+            dark: '#121212',
+            light: '#F8F9FA'
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .text-shadow-lg {
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+      }
+      .product-card-hover {
+        transition: all 0.3s ease;
+      }
+      .product-card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .modal-overlay {
+        backdrop-filter: blur(5px);
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter bg-light text-dark">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <nav class="bg-primary/95 text-white shadow-lg">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex-shrink-0 flex items-center">
+              <img src="public/images/LOGO.png" alt="LOGO" class="h-12 mr-2">
+              <span class="text-xl font-bold" data-key="company-name">宇讯通光电</span>
+            </a>
+            <div class="hidden md:ml-10 md:flex md:space-x-8">
+              <a href="index.html" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom"
+                data-key="home">首页</a>
+              <a href="index.html#about"
+                class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom"
+                data-key="about">公司简介</a>
+              <a href="#" class="text-accent border-b-2 border-accent px-3 py-2 text-sm font-medium transition-custom"
+                data-key="products">产品中心</a>
+              <a href="index.html#contact"
+                class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom"
+                data-key="contact">联系我们</a>
+              <a href="public/file/2024年宇讯通彩页.pdf"
+                class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom"
+                data-key="navDownload" download>资料下载</a>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="ml-4 flex items-center md:ml-6">
+              <button type="button"
+                class="p-1 rounded-full text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
+                <span class="sr-only">搜索</span>
+                <i class="fa fa-search text-lg"></i>
+              </button>
+            </div>
+            <div class="ml-4 flex items-center md:hidden">
+              <button type="button" id="mobile-menu-button"
+                class="p-2 rounded-md text-white hover:text-accent focus:outline-none">
+                <span class="sr-only">打开主菜单</span>
+                <i class="fa fa-bars text-xl"></i>
+              </button>
+            </div>
+            <div class="ml-4 flex items-center">
+              <button id="language-switch" class="p-1 rounded-full text-white hover:text-accent focus:outline-none">
+                <span data-key="language-button">中文</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 移动端菜单 -->
+      <div id="mobile-menu" class="hidden md:hidden bg-primary/95">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="index.html" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+            data-key="home">首页</a>
+          <a href="index.html#about" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+            data-key="about">公司简介</a>
+          <a href="#" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+            data-key="products">产品中心</a>
+          <a href="index.html#contact" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+            data-key="contact">联系我们</a>
+          <a href="public/file/2024年宇讯通彩页.pdf"
+            class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="navDownload"
+            download>资料下载</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 页面内容 -->
+  <main class="pt-16 pb-20">
+    <!-- 英雄区 -->
+    <section class="relative bg-gradient-to-r from-primary to-secondary text-white py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow-lg mb-6" data-key="hero-title">
+          专业光纤通信设备制造商
+        </h1>
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-3xl mx-auto" data-key="hero-subtitle">
+          22年光纤连接器生产经验 | 15年设备制造经验 | 30+项专利技术
+        </p>
+      </div>
+    </section>
+
+    <!-- 产品分类 -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-4" data-key="product-center-title">产品中心
+          </h2>
+          <p class="text-gray-600 max-w-3xl mx-auto text-lg" data-key="product-center-subtitle">
+            提供光纤研磨、组装、检测设备及光通信器件全系列产品
+          </p>
+        </div>
+
+        <!-- 产品分类标签 -->
+        <div class="flex flex-wrap justify-center mb-12 gap-2">
+          <button
+            class="product-tab active bg-primary text-white px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="all" data-key="all-products">
+            全部产品
+          </button>
+          <button
+            class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="polishing" data-key="polishing-equipment">
+            研磨设备
+          </button>
+          <button
+            class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="assembling" data-key="assembling-equipment">
+            组装设备
+          </button>
+          <button
+            class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="testing" data-key="testing-equipment">
+            检测设备
+          </button>
+          <button
+            class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="accessories" data-key="ferrule-equipment">
+            插芯设备
+          </button>
+          <button
+            class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="components" data-key="optical-components">
+            光通信器件
+          </button>
+          <button
+            class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="stripping" data-key="stripping-equipment">
+            剥线设备
+          </button>
+          <button
+            class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
+            data-category="curing" data-key="curing-equipment">
+            固化设备
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品列表 -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-list">
+          <!-- 产品1: FPM-1000A调速光纤研磨机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="polishing" data-product-id="1">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-1000A光纤研磨机.jpg" alt="FPM-1000A调速光纤研磨机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-accent text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="hot-product">
+                热销产品
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-1-name">FPM-1000A调速光纤研磨机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-1-description">
+                四角加压设计，可加工FC/SC/ST/LC等标准光纤连接器，适用于PC及APC产品大批量生产
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="fiber-polishing">光纤研磨</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-precision">高精度</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-1-capacity">加工能力：SC:36 Max /
+                    LC:50 Max</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-1-speed">转速可调：0-150转/分钟</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: FPM-3000编程调速光纤研磨机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="polishing" data-product-id="7">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-3000编程调速光纤研磨机.jpg" alt="FPM-3000编程调速光纤研磨机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="tech-leading">
+                技术领先
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-7-name">FPM-3000编程调速光纤研磨机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-7-description">
+                可调速的可编程控制光纤研磨机，具有缓慢启动功能及0-200rpm的速度选择范围，工艺设定更灵活
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="programmable">可编程</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-efficiency">高效率</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-7-speed">速度范围：0-200转/分钟</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-7-capacity">负载能力：36个以上SC或50个以上LC</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: FPM-5000编程触摸式光纤研磨机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="polishing" data-product-id="8">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-5000.png" alt="FPM-5000编程触摸式光纤研磨机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="core-product">
+                核心产品
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-8-name">FPM-5000编程触摸式光纤研磨机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-8-description">
+                可加工多种标准光纤连接器，研磨MTRJ、MTP、MPO连接器效果更佳，支持20种研磨工艺
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="touch-control">触摸控制</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="multi-process">多工艺</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-8-process">支持20种研磨工艺，每种程序6道工序</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 产品2: YXT-SCYJ-01全自动陶瓷插芯压接机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="accessories" data-product-id="2">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/全自动插芯压接机.jpg" alt="YXT-SCYJ-01全自动陶瓷插芯压接机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="new-product">
+                新品上市
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-2-name">YXT-SCYJ-01全自动陶瓷插芯压接机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-2-description">
+                具备自动送料、方向识别、压合及成品输出功能，提升插芯压接效率与精度，降低劳动强度
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="automatic-crimping">自动压接</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="ceramic-ferrule">陶瓷插芯</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-2-specification">压配规格：SC-250-D(42.499±0.0005mmX10.5mm)</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-2-efficiency">生产效率：5000-6500pcs/小时</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+
+          <!-- 新增产品: SC散件组装机YXT-SCZZ-01 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="assembling" data-product-id="10">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/SC散件组装机.png" alt="SC散件组装机YXT-SCZZ-01"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-10-name">SC散件组装机YXT-SCZZ-01</h3>
+              <p class="text-gray-600 mb-4" data-key="product-10-description">
+                触摸屏操作PLC控制系统，振动盘自动送料，精密直线式传送结构，组装速度1700-2000pcs/h
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="automatic-assembly">自动组装</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-speed">高速度</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-10-speed">组装速度：1700-2000pcs/小时</span>
+                </p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-10-alarm">无料不工作，故障显示报警</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 产品3: 光纤端面检测仪 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="testing" data-product-id="3">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/端面检测仪/一体式光纤端面检测仪.jpg" alt="光纤端面检测仪"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="core-product">
+                核心产品
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-3-name">一体式光纤端面检测仪</h3>
+              <p class="text-gray-600 mb-4" data-key="product-3-description">
+                可将光纤端面放大200/400/800倍，快速检测脏污、划痕等不良，保障光纤连接质量
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="end-face-detection">端面检测</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-definition-magnification">高清放大</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-3-magnification">放大倍数：200X/400X/800X
+                  </span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-3-display">显示屏：8英寸TFT</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 内径陶瓷套圈自动检测机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="testing" data-product-id="11">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/内径陶瓷套圈.png" alt="内径陶瓷套圈自动检测机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-11-name">内径陶瓷套圈自动检测机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-11-description">
+                用于SC陶瓷插芯内径尺寸的检测，自动检测和分类识别，双工位检测，精度高、效率快
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="auto-detection">自动检测</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-accuracy">高准确度</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-11-efficiency">工作效率：1800pcs/小时</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-11-detection-range">检测范围：0.120-0.130mm</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+
+          <!-- 新增产品: YXT-DMQX-01光纤端面自动清洗机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="testing" data-product-id="22">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/YXT-DMQX-01光纤端面自动清洗机.png" alt="YXT-DMQX-01光纤端面自动清洗机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-22-name">YXT-DMQX-01光纤端面自动清洗机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-22-description">
+                采用三轴移动平台，液体+气体清洁原理，高效非接触清洗，可一人操作多机，清洗效率700-800PCS/H
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="end-face-cleaning">端面清洗</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="non-destructive">无损清洁</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-22-efficiency">单机效率：700-800PCS/小时</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-22-yield">良率：高达90%以上</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+
+          <!-- 产品4: YXT-RBJ-10光纤热剥机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="stripping" data-product-id="4">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/光纤热剥机.jpg" alt="YXT-RBJ-10光纤热剥机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-accent text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="best-selling-product">
+                畅销产品
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-4-name">YXT-RBJ-10多芯光纤热剥机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-4-description">
+                可一次性剥除1-12根光纤缓冲层，直达125μm包层，适用于多种紧包光缆
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="fiber-stripping">光纤剥除</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="multi-core-processing">多芯处理</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-4-stripping-range">剥离范围：900μm缓冲层至125μm包层</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-4-control">微电脑控制，操作简便</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+
+
+          <!-- 新增产品: RX-002 MPO多通道插回损测试仪 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="testing" data-product-id="12">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/插回损测试仪.jpg" alt="RX-002 MPO多通道插回损测试仪"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-12-name">RX-002 MPO多通道插回损测试仪</h3>
+              <p class="text-gray-600 mb-4" data-key="product-12-description">
+                内置1310/1550光源，支持12/24通道，适用于MPO连接器的插回损测试，精度高
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="multi-channel">多通道</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="loss-test">损耗测试</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-12-channels">通道数：12/24</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-12-accuracy">测试精度：±0.03dB</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 产品5: YXT-CSJ-01 光纤跳线自动穿散件机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="accessories" data-product-id="5">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/YXT-CSJ-01 光纤跳线自动穿散件机.png" alt="YXT-CSJ-01 光纤跳线自动穿散件机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-5-name">YXT-CSJ-01 光纤跳线自动穿散件机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-5-description">
+                本设备采用多个精密震动盘和直震轨道装置进行正反面的识别,应用先进的人工智能PLC程序控制,识别多个操作指令。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="high-speed">高速处理</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="multi-core-processing">多芯处理</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-5-material">机器产能：1000-1300PCS/H</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-5-inner-diameter">内径精度：±0.5μm</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: YXT-UVH-02光纤快速固化炉 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="curing" data-product-id="15">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/MPO智能固化炉.png" alt="YXT-UVH-02光纤快速固化炉"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-15-name">YXT-UVH-02光纤快速固化炉</h3>
+              <p class="text-gray-600 mb-4" data-key="product-15-description">
+                采用进口LED紫外光源，多工位设计，能量均匀，适用于光纤连接器、PLC分路器等产品的UV胶水固化
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="multi-station">多工位</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="quick-curing">快速固化</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-15-stations">工位数量：4工位</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-15-time">固化时间：5-30秒</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: MARS-ML 系列光纤端面干涉仪 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="curing" data-product-id="16">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/MARS-ML 系列光纤端面干涉仪.png" alt="MARS-ML 系列光纤端面干涉仪"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-16-name">MARS-ML 系列光纤端面干涉仪</h3>
+              <p class="text-gray-600 mb-4" data-key="product-16-description">
+                采MARS-ML系列光纤端面干涉仪是一款高性能、低价格、自动对焦、非接触式光纤端面干涉仪。它能够准确快速地测量出光纤连接器端面的曲率半径(ROC),顶点偏移(Apexoffset),光纤高度(FiberHeight)及APC光纤连接器的研磨角度和键度误差;同时以彩图的方式展现光纤连接器表面的三维状况。光纤端面干涉仪主要分为干涉仪和专用测量软件两个部分。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="intelligent-control">智能控制</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="adjustable-intensity">自动对焦</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-16-wavelength">高性价比</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-16-intensity">配有Maxlnspect 分析软件</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 产品6: YXT-DJ-200C全自动注胶机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="assembling" data-product-id="6">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/全自动点胶机.jpg" alt="YXT-DJ-200C全自动注胶机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-6-name">YXT-DJ-200C全自动注胶机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-6-description">
+                采用微电脑控制系统，XYZ轴日本技术，注胶速度达3600PCS/H，胶量稳定无滴漏
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="automatic-gluing">自动注胶</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-precision">高精度</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-6-speed">注胶速度：3600PCS/小时</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-6-motion-system">运动系统：日本马达+台湾导轨</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <!-- 新增产品: MPO/MTP光纤连接器 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="components" data-product-id="17">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/插芯全自动点胶机.png" alt="MPO/MTP光纤连接器"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-17-name">YXT-MPODJ-02 MT 插芯全自动点胶机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-17-description">
+                本设备主要适用MT插芯产品点胶工艺,也可用来检测点胶外观用,设备系统全部采用PLC控制,编程简单,即学即用
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="high-density">高密度</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-speed-transmission">高速传输</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-17-material">产能：550-650个/小时</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-17-advantage">优势：1200万像素放大镜</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 外径检测器 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="components" data-product-id="18">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/外径检测.png" alt=""
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-18-name">YXT-WJJC-001 全自动外径检测机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-18-description">
+                宇讯通系列全自动外径检测机是我司独立设计,采用精确的基恩士激光外径仪作为测量元件,可对陶瓷插芯成品和半成品外径进行6档的精确检测,同时可对光纤光缆及精密针规等产品外径检测,全部操作由机器自动完成(光纤及光缆人工手动完成)。具有准确高效,操作简便等特点。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="high-accuracy">高精度</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="low-loss">低损耗</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-18-ratio">工作效率：1500pcs/h(陶瓷插芯检测)</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-18-loss">精度：0.00005mm</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <!-- 新增产品: YXT-RSJ-01热缩管收缩机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="curing" data-product-id="19">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/热管收缩.png" alt="YXT-RSJ-01热缩管收缩机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="new-technology">
+                新技术
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-19-name">YXT-RSJ-01热缩管收缩机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-19-description">
+                用于热缩套管的烘烤收缩，取代传统手持式热封枪，可配合车间流水作业，温度和时间可调，热缩效果美观无气泡
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="heat-shrink">热缩处理</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-efficiency">高效率</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-19-capacity">一次热缩LC产品24根或12根</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-19-time">热缩时间：20-30秒</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: YXT-RBJ-20 250u/带状热剥机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="stripping" data-product-id="20">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/带状热剥机.png" alt="YXT-RBJ-20 250u/带状热剥机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-20-name">YXT-RBJ-20 250u/带状热剥机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-20-description">
+                可剥离250μm-125μm光纤，一次可剥1-12根250u裸光纤或3根带状光纤，微电脑控制，操作简单
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="ribbon-fiber">带状光纤</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="precise-stripping">精准剥除</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-20-stripping">剥离范围：250μm-125μm</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-20-efficiency">工作效率：高效稳定</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 一体式单芯剥皮剪毛机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="stripping" data-product-id="21">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机.jpg" alt="一体式单芯剥皮剪毛机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-21-name">一体式单芯剥皮剪毛机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-21-description">
+                针对1.2-3.0mm单芯光缆及MPO带纤光缆，可剥外皮、剪芳纶及缆皮对开，PLC控制，操作简单
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="single-core">单芯处理</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="multi-function">多功能</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-21-cable">适用光缆：1.2-3.0mm单芯及MPO带纤</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-21-feature">最大优点：可将芳纶全部剪光</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: YXT-LLTEST-01拉力测试仪 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="testing" data-product-id="23">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/拉力测试仪.jpg" alt="YXT-LLTEST-01拉力测试仪"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-23-name">YXT-LLTEST-01拉力测试仪</h3>
+              <p class="text-gray-600 mb-4" data-key="product-23-description">
+                高精度高分辨率拉力测试设备，支持峰值保持、自动解除功能，多种单位自动互换，适用于光纤连接器拉力测试
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="tensile-test">拉力测试</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-precision">高精度</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-23-load">最大负荷：500N</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-23-accuracy">负荷分度值：0.1N，示值误差0.5%</span>
+                </p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-23-units">支持单位：N、kgf、lbf自动互换</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: YXT-804/805/806/807/808/809触摸屏系列全自动裁缆机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="cutting" data-product-id="24">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/触摸屏系列全自动裁缆机.png" alt="YXT-804/805触摸屏系列全自动裁缆机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-24-name">YXT-804/805触摸屏系列全自动裁缆机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-24-description">
+                专用于软光缆、皮线缆、12芯900U及单芯900U光缆切断、计长、计数、缠绕，支持喷字标记（选配）
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="cable-cutting">光缆裁切</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="touch-screen">触摸屏控制</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-24-cable-spec">适用光缆：0.9-10mm</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-24-cut-length">裁缆长度：0.1-1920米</span>
+                </p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-24-speed">送缆速度：0.1-3.2M/s</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 全自动绕线扎线挂线裁缆机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="cutting" data-product-id="25">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/全自动绕线挂线裁缆机.jpg" alt=" 全自动绕线扎线挂线裁缆机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute top-4 left-4 bg-accent text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="high-efficiency">
+                高效生产
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-25-name">全自动绕线扎线挂线裁缆机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-25-description">
+                绕扎挂自动化一体机，支持美纹纸或扎丝捆扎自动切换，带喷码功能，适用于2.0/3.0单双芯光缆
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="winding-tying">绕线扎线</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="automatic">全自动化</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-25-efficiency">生产效率：700pcs/H(3米线)</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-25-cut-length">裁线长度：3m-50m</span>
+                </p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-25-accuracy">裁线精度：±5mm</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 96孔蜂窝式固化炉 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="curing" data-product-id="26">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/96孔固化炉.png" alt="96孔蜂窝式固化炉"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-26-name">96孔蜂窝式固化炉</h3>
+              <p class="text-gray-600 mb-4" data-key="product-26-description">
+                高密度蜂窝式设计，96孔大容量固化炉，适用于光纤连接器胶水固化，温度均匀性好，固化效率高
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                  data-key="curing-furnace">固化炉</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="high-capacity">大容量</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-26-holes">固化孔数：96孔</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-26-design">蜂窝式设计，温度均匀</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 工具及耗材部分 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="tools" data-product-id="27">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/工具及耗材.png" alt=" 光纤工具及耗材"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-27-name">光纤工具及耗材</h3>
+              <p class="text-gray-600 mb-4" data-key="product-27-description">
+                提供全系列光纤连接所需工具与耗材，包括开剥钳、压接钳、清洁笔、研磨材料及各类胶水等
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full" data-key="tools">工具</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="consumables">耗材</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-27-tools">主要工具：开剥钳、压接钳、清洁笔、研磨工具</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
+                  <span data-key="product-27-consumables">耗材：研磨片、胶水、清洁器、插芯</span>
+                </p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 加载更多按钮 -->
+        <div class="text-center mt-12">
+          <button id="load-more"
+            class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-custom flex items-center mx-auto"
+            data-key="load-more-products">
+            加载更多产品
+            <i class="fa fa-refresh ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="product-modal" class="fixed inset-0 z-50 hidden modal-overlay bg-black/50">
+    <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-auto">
+        <button id="close-modal"
+          class="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 hover:bg-white text-gray-600 focus:outline-none"
+          data-key="close-modal">
+          <i class="fa fa-times text-xl"></i>
+        </button>
+        <div class="grid md:grid-cols-2">
+          <!-- 产品图片 -->
+          <div class="relative h-64 md:h-auto">
+            <img id="modal-image" src="https://picsum.photos/seed/product1/800/600" alt="产品图片"
+              class="w-full h-full object-cover">
+          </div>
+          <!-- 产品详情 -->
+          <div class="p-6 md:p-8">
+            <h2 id="modal-title" class="text-2xl md:text-3xl font-bold mb-2" data-key="modal-product-1-name">
+              FPM-1000A调速光纤研磨机</h2>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span id="modal-category" class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                data-key="fiber-polishing">光纤研磨</span>
+              <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                data-key="high-precision">高精度</span>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-6">
+              <p id="modal-description" class="text-gray-700 mb-4" data-key="modal-product-1-description">
+                FPM-1000A调速光纤研磨机采用四角加压设计，稳定性好，可加工各种标准光纤连接器，
+                适用于SC/FC/ST/LC/MU等连接头、PC及APC类型产品的大批量生产。
+              </p>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p class="text-gray-500" data-key="processing-capacity">加工能力</p>
+                  <p class="font-medium" data-key="product-1-capacity">SC:36 Max / LC:50 Max</p>
+                </div>
+                <div>
+                  <p class="text-gray-500" data-key="speed-range">转速范围</p>
+                  <p class="font-medium" data-key="product-1-speed">0-150转/分钟</p>
+                </div>
+                <div>
+                  <p class="text-gray-500" data-key="equipment-size">设备尺寸</p>
+                  <p class="font-medium" data-key="product-1-size">220×320×285mm</p>
+                </div>
+                <div>
+                  <p class="text-gray-500" data-key="electrical-parameters">电气参数</p>
+                  <p class="font-medium" data-key="product-1-parameters">220V, 50/60HZ, 2A</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3" data-key="product-features">产品特性</h3>
+            <ul id="modal-features" class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="fa fa-check text-accent mt-1 mr-3"></i>
+                <span data-key="product-1-feature-1">可加工各种标准光纤连接器：FC/UPC, SC/UPC, ST/UPC, LC/UPC, MU/UPC, FC/APC,
+                  SC/APC等</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-accent mt-1 mr-3"></i>
+                <span data-key="product-1-feature-2">四角加压设计，稳定性好，适合大批量生产</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-accent mt-1 mr-3"></i>
+                <span data-key="product-1-feature-3">所有运转材料经过热处理，使用寿命长</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-accent mt-1 mr-3"></i>
+                <span data-key="product-1-feature-4">研磨盘采用IFC结构，精度高、寿命长，端面干涉一次通过率98%或以上</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-accent mt-1 mr-3"></i>
+                <span data-key="product-1-feature-5">操作面板与水平成一定角度，适合操作者观察</span>
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-4">
+              <a href="tel:0755-27915969"
+                class="bg-primary hover:bg-primary/90 text-white font-medium py-2.5 px-6 rounded-full transition-custom flex items-center"
+                data-key="consult-purchase">
+                <i class="fa fa-phone mr-2"></i> 咨询购买
+              </a>
+              <a href="mailto:szyxtgd@163.com"
+                class="bg-white border border-primary text-primary hover:bg-primary/5 font-medium py-2.5 px-6 rounded-full transition-custom flex items-center"
+                data-key="email-consultation">
+                <i class="fa fa-envelope mr-2"></i> 邮件咨询
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center mb-6">
+            <img src="public/images/LOGO.png" alt="logo" class="h-8 mr-3">
+            <span class="text-xl font-bold" data-key="company-name">宇讯通光电</span>
+          </div>
+          <p class="text-gray-400 mb-6" data-key="company-introduction">
+            专业的光纤连接器生产设备制造商，22年行业经验，国家高新技术企业，拥有30多项专利技术。
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-accent transition-custom" onclick="showImage()">
+              <i class="fa fa-weixin text-xl"></i>
+            </a>
+            <!--  <a href="#" class="text-gray-400 hover:text-accent transition-custom">
+              <i class="fa fa-weibo text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-accent transition-custom">
+              <i class="fa fa-linkedin text-xl"></i>
+            </a> -->
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-6" data-key="quick-links">快速链接</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-accent transition-custom" data-key="home">首页</a>
+            </li>
+            <li><a href="index.html.#about" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="about">公司简介</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom" data-key="products">产品中心</a></li>
+            <!-- <li><a href="#" class="text-gray-400 hover:text-accent transition-custom" data-key="news">新闻动态</a></li> -->
+            <li><a href="index.html#contact" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="contact">联系我们</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-6" data-key="product-categories">产品分类</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="fiber-polishing-equipment">光纤研磨设备</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="fiber-assembling-equipment">光纤组装设备</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="fiber-testing-equipment">光纤检测设备</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="ferrule-production-equipment">插芯生产设备</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="optical-components">光通信器件</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="stripping-equipment">剥线设备</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-accent transition-custom"
+                data-key="curing-equipment">固化设备</a></li>
+
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-6" data-key="contact-us">联系我们</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fa fa-map-marker text-accent mt-1 mr-3"></i>
+              <span class="text-gray-400" data-key="address">深圳市宝安区福永街道凤凰兴业三路3号美盈(凤凰)智汇创新园A7栋405</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone text-accent mr-3"></i>
+              <span class="text-gray-400" data-key="phone1">0755-27915969</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone text-accent mr-3"></i>
+              <span class="text-gray-400" data-key="phone2">13682350300(李红斌)</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone text-accent mr-3"></i>
+              <span class="text-gray-400" data-key="phone3">13538127289(易玉辉)</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-envelope text-accent mr-3"></i>
+              <span class="text-gray-400" data-key="email">szyxtgd@163.com</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-globe text-accent mr-3"></i>
+              <span class="text-gray-400" data-key="website">www.szyxtgd.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <p data-key="copyright">© 2024 深圳市宇讯通光电有限公司 版权所有 | 粤ICP备12345678号</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-primary', 'shadow-md');
+        navbar.classList.remove('bg-transparent');
+      } else {
+        navbar.classList.remove('bg-primary', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+      }
+    });
+    // 移动端菜单
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // 产品分类筛选
+    const productTabs = document.querySelectorAll('.product-tab');
+    const productItems = document.querySelectorAll('.product-item');
+
+    productTabs.forEach(tab => {
+      tab.addEventListener('click', function () {
+        // 移除所有标签的活动状态
+        productTabs.forEach(t => {
+          t.classList.remove('active', 'bg-primary', 'text-white');
+          t.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        // 添加当前标签的活动状态
+        this.classList.add('active', 'bg-primary', 'text-white');
+        this.classList.remove('bg-gray-200', 'text-gray-700');
+
+        const category = this.getAttribute('data-category');
+
+        productItems.forEach(item => {
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 产品详情模态框
+    const productModal = document.getElementById('product-modal');
+    const closeModal = document.getElementById('close-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalCategory = document.getElementById('modal-category');
+    const modalDescription = document.getElementById('modal-description');
+    const modalFeatures = document.getElementById('modal-features');
+
+    // 产品数据
+    const products = [
+      {
+        id: 1,
+        name: 'FPM-1000A调速光纤研磨机',
+        image: 'https://picsum.photos/seed/product1/800/600',
+        category: '光纤研磨',
+        description: 'FPM-1000A调速光纤研磨机采用四角加压设计，稳定性好，可加工各种标准光纤连接器，适用于SC/FC/ST/LC/MU等连接头、PC及APC类型产品的大批量生产。',
+        features: [
+          '可加工各种标准光纤连接器：FC/UPC, SC/UPC, ST/UPC, LC/UPC, MU/UPC, FC/APC, SC/APC等',
+          '四角加压设计，稳定性好，适合大批量生产',
+          '所有运转材料经过热处理，使用寿命长',
+          '研磨盘采用IFC结构，精度高、寿命长，端面干涉一次通过率98%或以上',
+          '操作面板与水平成一定角度，适合操作者观察'
+        ]
+      },
+      {
+        id: 2,
+        name: 'YXT-SCYJ-01全自动陶瓷插芯压接机',
+        image: 'https://picsum.photos/seed/product2/800/600',
+        category: '自动压接',
+        description: 'YXT-SCYJ-01全自动陶瓷插芯压接机具备自动送料、方向识别、压合及成品输出功能，采用先进的伺服控制系统，可精确控制压接力度和深度，有效提升插芯压接效率与精度，降低劳动强度。',
+        features: [
+          '自动送料、方向识别、压合及成品输出功能',
+          '采用先进的伺服控制系统，压接力度和深度精确可控',
+          '压接精度高，同心度偏差小于±1μm',
+          '操作简便，可存储多种产品参数',
+          '生产效率高，可达5000-6500pcs/小时'
+        ]
+      },
+      {
+        id: 3,
+        name: '一体式光纤端面检测仪',
+        image: 'https://picsum.photos/seed/product3/800/600',
+        category: '端面检测',
+        description: '一体式光纤端面检测仪可将光纤端面放大200/400/800倍，采用高清数字摄像头和专业图像处理算法，能够快速检测光纤端面上的脏污、划痕等不良情况，保障光纤连接质量。',
+        features: [
+          '高清数字摄像头，图像清晰，分辨率高',
+          '可将光纤端面放大200/400/800倍',
+          '8英寸TFT显示屏，触摸操作，界面友好',
+          '专业图像处理算法，自动识别脏污、划痕等缺陷',
+          '支持多种光纤连接器类型：SC/FC/ST/LC/MU等'
+        ]
+      },
+      {
+        id: 4,
+        name: 'YXT-RBJ-10多芯光纤热剥机',
+        image: 'https://picsum.photos/seed/product4/800/600',
+        category: '光纤剥除',
+        description: 'YXT-RBJ-10多芯光纤热剥机可一次性剥除1-12根光纤缓冲层，直达125μm包层，适用于多种紧包光缆。采用微电脑控制，温度和时间可精确调节，确保剥除效果稳定可靠。',
+        features: [
+          '可一次性剥除1-12根光纤缓冲层',
+          '剥除范围：900μm缓冲层至125μm包层',
+          '微电脑控制，温度和时间精确可调',
+          '剥除效果好，不损伤光纤包层',
+          '适用于多种紧包光缆，操作简便'
+        ]
+      },
+      {
+        id: 5,
+        name: '陶瓷插芯系列',
+        image: 'https://picsum.photos/seed/product5/800/600',
+        category: '陶瓷材质',
+        description: '高精度陶瓷插芯，采用优质氧化锆陶瓷材料，具有优异的耐磨性和尺寸稳定性，适用于各类光纤连接器。严格的生产工艺和质量控制，确保每一个插芯都符合高标准要求。',
+        features: [
+          '采用优质氧化锆陶瓷材料，硬度高，耐磨性好',
+          '内径精度：±0.5μm，外径精度：±1μm',
+          '表面粗糙度Ra≤0.01μm，同心度≤0.5μm',
+          '适用于PC、UPC、APC等各种研磨方式',
+          '广泛应用于光纤通信、数据中心等领域'
+        ]
+      },
+      {
+        id: 6,
+        name: 'YXT-DJ-200C全自动注胶机',
+        image: 'https://picsum.photos/seed/product6/800/600',
+        category: '自动注胶',
+        description: 'YXT-DJ-200C全自动注胶机采用微电脑控制系统，XYZ轴日本技术，注胶速度达3600PCS/H，胶量稳定无滴漏。适用于各种光纤连接器的注胶工艺，可显著提高生产效率和产品质量。',
+        features: [
+          '微电脑控制系统，操作简便，稳定性好',
+          'XYZ轴采用日本马达+台湾导轨，运动精度高',
+          '注胶速度快，可达3600PCS/小时',
+          '胶量控制精确，重复精度±0.5%',
+          '具有自动清洗、自动排胶等功能'
+        ]
+      },
+      {
+        id: 7,
+        name: "FPM-3000编程调速光纤研磨机",
+        category: "光纤研磨",
+        image: "https://picsum.photos/seed/product7/600/400",
+        description: "可调速的可编程控制光纤研磨机，具有缓慢启动功能及0 - 200rpm的速度选择范围，工艺设定更灵活",
+        specification: "速度范围：0 - 200转/分钟；负载能力：36个以上SC或50个以上LC",
+        features: [
+          "可编程控制",
+          "速度可调",
+          "多工艺设定"
+        ],
+        application: "光纤连接器制造、光纤器件加工"
+      },
+      {
+        id: 8,
+        name: "FPM-5000编程触摸式光纤研磨机",
+        category: "光纤研磨",
+        image: "https://picsum.photos/seed/product8/600/400",
+        description: "可加工多种标准光纤连接器，研磨MTRJ、MTP、MPO连接器效果更佳，支持20种研磨工艺",
+        specification: "支持20种研磨工艺，每种程序6道工序",
+        features: [
+          "触摸控制",
+          "多工艺支持",
+          "高精度研磨"
+        ],
+        application: "光纤连接器制造、数据中心、FTTH"
+      },
+      {
+        id: 9,
+        name: "YXT-DJ-200C全自动注胶机",
+        category: "自动注胶",
+        image: "https://picsum.photos/seed/product9/600/400",
+        description: "采用微电脑全自动控制系统，XYZ轴日本技术，注胶速度达3600PCS/H，胶量稳定无滴漏，适用于光纤连接器、PLC分路器等产品的注胶工艺",
+        specification: "注胶速度：3600PCS/小时；运动系统：日本马达 + 台湾导轨",
+        features: [
+          "全自动控制",
+          "注胶稳定",
+          "速度快"
+        ],
+        application: "光纤连接器制造、光器件组装"
+      },
+      {
+        id: 10,
+        name: "SC散件组装机YXT-SCZZ-01",
+        category: "自动组装",
+        image: "https://picsum.photos/seed/product10/600/400",
+        description: "触摸屏操作PLC控制系统，振动盘自动送料，精密直线式传送结构，组装速度1700 - 2000pcs/h",
+        specification: "组装速度：1700 - 2000pcs/小时；无料不工作，故障显示报警",
+        features: [
+          "自动送料",
+          "高精度组装",
+          "故障报警"
+        ],
+        application: "光纤连接器制造"
+      },
+      {
+        id: 11,
+        name: "内径陶瓷套圈自动检测机",
+        category: "自动检测",
+        image: "https://picsum.photos/seed/product11/600/400",
+        description: "用于SC陶瓷插芯内径尺寸的检测，自动检测和分类识别，双工位检测，精度高、效率快",
+        specification: "工作效率：1800pcs/小时；检测范围：0.120 - 0.130mm",
+        features: [
+          "自动检测",
+          "高精度",
+          "双工位"
+        ],
+        application: "陶瓷插芯制造、光纤连接器检测"
+      },
+      {
+        id: 12,
+        name: "RX-002 MPO多通道插回损测试仪",
+        category: "端面检测",
+        image: "https://picsum.photos/seed/product12/600/400",
+        description: "内置1310/1550光源，支持12/24通道，适用于MPO连接器的插回损测试，精度高",
+        specification: "通道数：12/24；测试精度：±0.03dB",
+        features: [
+          "多通道测试",
+          "高精度",
+          "快速检测"
+        ],
+        application: "数据中心、光纤通信、高速网络"
+      },
+      {
+        id: 13,
+        name: "YXT-RBJ-20光纤热剥机",
+        category: "自动热剥",
+        image: "https://picsum.photos/seed/product13/600/400",
+        description: "采用恒温加热技术，可剥除0.9/1.6/2.0/3.0mm紧套层，不伤光纤，剥除长度可调",
+        specification: "适用光纤：250μm涂覆层光纤；剥除长度：2 - 10mm可调",
+        features: [
+          "恒温加热",
+          "不伤光纤",
+          "长度可调"
+        ],
+        application: "光纤熔接、光纤连接器制造"
+      },
+      {
+        id: 14,
+        name: "YXT-GBJ-01光纤切割刀",
+        category: "自动切割",
+        image: "https://picsum.photos/seed/product14/600/400",
+        description: "适用于250μm、900μm、3.0mm等各种规格光纤，切割角度<0.5°，寿命≥30000次",
+        specification: "切割角度：<0.5°；刀片寿命：≥30000次",
+        features: [
+          "高精度切割",
+          "长寿命",
+          "操作简便"
+        ],
+        application: "光纤熔接、光纤连接器制造"
+      },
+      {
+        id: 15,
+        name: "YXT-UVH-02光纤快速固化炉",
+        category: "自动固化",
+        image: "https://picsum.photos/seed/product15/600/400",
+        description: "采用进口LED紫外光源，多工位设计，能量均匀，适用于光纤连接器、PLC分路器等产品的UV胶水固化",
+        specification: "工位数量：4工位；固化时间：5 - 30秒",
+        features: [
+          "多工位",
+          "快速固化",
+          "能量均匀"
+        ],
+        application: "光纤连接器制造、光器件组装"
+      },
+      {
+        id: 16,
+        name: "YXT-UVH-03 LED紫外光固化机",
+        category: "自动固化",
+        image: "https://picsum.photos/seed/product16/600/400",
+        description: "采用365nm LED紫外光源，光强可调，智能控制，适用于各种光纤连接器的UV胶水固化",
+        specification: "波长：365nm；光强范围：1000 - 8000mW/cm²",
+        features: [
+          "LED光源",
+          "光强可调",
+          "智能控制"
+        ],
+        application: "光纤连接器制造、光器件组装"
+      },
+      {
+        id: 17,
+        name: "YXT-MPODJ-02 MT插芯全自动点胶机",
+        category: "组件",
+        image: "https://picsum.photos/seed/product17/600/400",
+        description: "本设备主要适用MT插芯产品点胶工艺,也可用来检测点胶外观用,设备系统全部采用PLC控制,编程简单,即学即用",
+        specification: "产能：550-650个/小时",
+        features: [
+          "高密度",
+          "低损耗",
+          "高速传输"
+        ],
+        application: "数据中心、高速网络、5G通信"
+      },
+      {
+        id: 18,
+        name: "YXT-WJJC-001 全自动外径检测机",
+        category: "检测",
+        image: "https://picsum.photos/seed/product18/600/400",
+        description: "宇讯通系列全自动外径检测机是我司独立设计,采用精确的基恩士激光外径仪作为测量元件,可对陶瓷插芯成品和半成品外径进行6档的精确检测,同时可对光纤光缆及精密针规等产品外径检测,全部操作由机器自动完成(光纤及光缆人工手动完成)。具有准确高效,操作简便等特点。",
+        specification: "工作效率：1500pcs/h(陶瓷插芯检测)",
+        features: [
+          "低损耗",
+          "高分辨率",
+          "高可靠性",
+          "高精度"
+        ],
+        application: " 陶瓷插芯制造、光纤连接器检测"
+      },
+      {
+        "id": 19,
+        "name": "YXT-RSJ-01热缩管收缩机",
+        "image": "https://picsum.photos/seed/product19/800/600",
+        "category": "辅助设备",
+        "description": "用于光纤熔接后热缩保护管的收缩，采用PID智能温控技术，温度均匀，收缩效果好，操作简便，工作稳定可靠。",
+        "features": [
+          "PID智能温控技术，温度控制精准",
+          "温度均匀，收缩效果好",
+          "操作简便，一键启动",
+          "工作稳定可靠，使用寿命长",
+          "适用于各种规格的热缩保护管"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "YXT-RBJ-20 250u/带状热剥机",
+        "image": "https://picsum.photos/seed/product20/800/600",
+        "category": "光纤处理",
+        "description": "可剥离250μm-125μm光纤，一次可剥1-12根250u裸光纤或3根带状光纤，微电脑控制，操作简单",
+        "features": [
+          "高精度剥离250μm-125μm光纤",
+          "支持单根或多根光纤同时处理",
+          "微电脑控制，参数可精确设置",
+          "剥离长度可调节，适应性强",
+          "操作简便，维护成本低"
+        ]
+      },
+      {
+        "id": 21,
+        "name": "一体式单芯剥皮剪毛机",
+        "image": "https://picsum.photos/seed/product21/800/600",
+        "category": "光纤处理",
+        "description": "针对1.2-3.0mm单芯光缆及MPO带纤光缆，可剥外皮、剪芳纶及缆皮对开，PLC控制，操作简单",
+        "features": [
+          "适用于1.2-3.0mm单芯及MPO带纤光缆",
+          "可完成剥外皮、剪芳纶及缆皮对开",
+          "PLC控制，操作界面友好",
+          "剪切精度高，芳纶可完全剪光",
+          "处理速度快，效率高"
+        ]
+      },
+      {
+        "id": 22,
+        "name": "YXT-DMQX-01光纤端面自动清洗机",
+        "image": "https://picsum.photos/seed/product22/800/600",
+        "category": "清洁设备",
+        "description": "采用三轴移动平台，液体+气体清洁原理，高效非接触清洗，可一人操作多机，清洗效率700-800PCS/H",
+        "features": [
+          "三轴移动平台，清洗无死角",
+          "液体+气体双重清洁，效果彻底",
+          "非接触式清洗，避免划伤端面",
+          "自动化程度高，可一人操作多机",
+          "清洗效率高，700-800PCS/H"
+        ]
+      },
+      {
+        "id": 23,
+        "name": "YXT-LLTEST-01拉力测试仪",
+        "image": "https://picsum.photos/seed/product23/800/600",
+        "category": "测试设备",
+        "description": "高精度高分辨率拉力测试设备，支持峰值保持、自动解除功能，多种单位自动互换，适用于光纤连接器拉力测试",
+        "features": [
+          "高精度测试，负荷分度值0.1N",
+          "示值误差0.5%，测量准确",
+          "支持峰值保持、自动解除功能",
+          "多种单位自动互换：N、kgf、lbf",
+          "适用于光纤连接器拉力测试"
+        ]
+      },
+      {
+        "id": 24,
+        "name": "YXT-804/805触摸屏系列全自动裁缆机",
+        "image": "https://picsum.photos/seed/product24/800/600",
+        "category": "裁剪设备",
+        "description": "专用于软光缆、皮线缆、12芯900U及单芯900U光缆切断、计长、计数、缠绕，支持喷字标记（选配）",
+        "features": [
+          "触摸屏控制，操作简便直观",
+          "适用于0.9-10mm直径的光缆",
+          "裁缆长度范围0.1-1920米",
+          "送缆速度0.1-3.2M/s，高效快速",
+          "支持喷字标记功能（选配）"
+        ]
+      },
+      {
+        "id": 25,
+        "name": "全自动绕线扎线挂线裁缆机",
+        "image": "https://picsum.photos/seed/product25/800/600",
+        "category": "裁剪设备",
+        "description": "绕扎挂自动化一体机，支持美纹纸或扎丝捆扎自动切换，带喷码功能，适用于2.0/3.0单双芯光缆",
+        "features": [
+          "绕线、扎线、挂线一体化操作",
+          "支持美纹纸或扎丝捆扎自动切换",
+          "带喷码功能，可标识线缆信息",
+          "生产效率高，700pcs/H(3米线)",
+          "裁线精度±5mm，精准度高"
+        ]
+      },
+      {
+        "id": 26,
+        "name": "96孔蜂窝式固化炉",
+        "image": "https://picsum.photos/seed/product26/800/600",
+        "category": "固化设备",
+        "description": "高密度蜂窝式设计，96孔大容量固化炉，适用于光纤连接器胶水固化，温度均匀性好，固化效率高",
+        "features": [
+          "96孔大容量设计，提高工作效率",
+          "蜂窝式结构，温度分布均匀",
+          "适用于光纤连接器胶水固化",
+          "固化效果好，保证产品质量",
+          "操作简便，维护方便"
+        ]
+      },
+      {
+        "id": 27,
+        "name": "光纤工具及耗材",
+        "image": "https://picsum.photos/seed/product27/800/600",
+        "category": "工具耗材",
+        "description": "提供全系列光纤连接所需工具与耗材，包括开剥钳、压接钳、清洁笔、研磨材料及各类胶水等",
+        "features": [
+          "包含多种光纤施工工具",
+          "提供各类光纤连接耗材",
+          "工具质量可靠，使用寿命长",
+          "耗材种类齐全，满足不同需求",
+          "专业配套，提高施工效率"
+        ]
+      }
+    ];
+
+    // 查看详情按钮点击事件
+    const viewProductButtons = document.querySelectorAll('.view-product-btn');
+
+    viewProductButtons.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const productId = parseInt(this.closest('.product-item').getAttribute('data-product-id'));
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+          modalImage.src = product.image;
+          modalImage.alt = product.name;
+          modalTitle.textContent = product.name;
+          modalCategory.textContent = product.category;
+          modalDescription.textContent = product.description;
+
+          // 清空并重新添加特性列表
+          modalFeatures.innerHTML = '';
+          product.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.className = 'flex items-start';
+            li.innerHTML = `
+          <i class="fa fa-check text-accent mt-1 mr-3"></i>
+          <span>${feature}</span>
+        `;
+            modalFeatures.appendChild(li);
+          });
+
+          // 显示模态框
+          productModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden'; // 防止背景滚动
+        }
+      });
+    });
+
+    // 关闭模态框
+    closeModal.addEventListener('click', function () {
+      productModal.classList.add('hidden');
+      document.body.style.overflow = ''; // 恢复背景滚动
+    });
+
+    // 点击模态框外部关闭
+    productModal.addEventListener('click', function (e) {
+      if (e.target === this) {
+        productModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // 加载更多产品按钮
+    const loadMoreButton = document.getElementById('load-more');
+    let isLoading = false;
+
+    loadMoreButton.addEventListener('click', function () {
+      if (isLoading) return;
+
+      isLoading = true;
+      this.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 加载中...';
+
+      // 模拟加载延迟
+      setTimeout(() => {
+        // 恢复按钮状态
+        isLoading = false;
+        this.innerHTML = '加载更多产品 <i class="fa fa-refresh ml-2"></i>';
+
+        // 这里可以添加实际的加载更多产品逻辑
+        alert('已加载全部产品');
+      }, 1500);
+    });
+
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-primary', 'shadow-md');
+        navbar.classList.remove('bg-transparent');
+      } else {
+        navbar.classList.remove('bg-primary', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+      }
+    });
+
+    const translations = {
+      'zh': {
+        'company-name': ' 宇讯通光电 ',
+        'home': ' 首页 ',
+        'about': ' 公司简介 ',
+        'products': ' 产品中心 ',
+        'contact': ' 联系我们 ',
+        'hero-title': ' 专业光纤通信设备制造商 ',
+        'hero-subtitle': '22 年光纤连接器生产经验 | 15 年设备制造经验 | 30 + 项专利技术 ',
+        'product-center-title': ' 产品中心 ',
+        'navDownload': '资料下载',
+        'product-center-subtitle': ' 提供光纤研磨、组装、检测设备及光通信器件全系列产品 ',
+        'all-products': ' 全部产品 ',
+        'polishing-equipment': ' 研磨设备 ',
+        'assembling-equipment': ' 组装设备 ',
+        'testing-equipment': ' 检测设备 ',
+        'ferrule-equipment': ' 插芯设备 ',
+        'optical-components': ' 光通信器件 ',
+        'stripping-equipment': ' 剥线设备 ',
+        'curing-equipment': ' 固化设备 ',
+        'tech-leading': ' 技术领先 ',
+        'hot-product': ' 热销产品 ',
+        'product-1-name': 'FPM-1000A 调速光纤研磨机 ',
+        'product-1-description': ' 四角加压设计，可加工 FC/SC/ST/LC 等标准光纤连接器，适用于 PC 及 APC 产品大批量生产 ',
+        'fiber-polishing': ' 光纤研磨 ',
+        'high-precision': ' 高精度 ',
+        'product-1-capacity': ' 加工能力：SC:36 Max / LC:50 Max',
+        'product-1-speed': ' 转速可调：0-150 转 / 分钟 ',
+        'view-details': ' 查看详情 ',
+        'new-product': ' 新品上市 ',
+        'product-2-name': 'YXT-SCYJ-01 全自动陶瓷插芯压接机 ',
+        'product-2-description': ' 具备自动送料、方向识别、压合及成品输出功能，提升插芯压接效率与精度，降低劳动强度 ',
+        'automatic-crimping': ' 自动压接 ',
+        'ceramic-ferrule': ' 陶瓷插芯 ',
+        'product-2-specification': ' 压配规格：SC-250-D (42.499±0.0005mmX10.5mm)',
+        'product-2-efficiency': ' 生产效率：5000-6500pcs / 小时 ',
+        'core-product': ' 核心产品 ',
+        'product-3-name': ' 一体式光纤端面检测仪 ',
+        'product-3-description': ' 可将光纤端面放大 200/400/800 倍，快速检测脏污、划痕等不良，保障光纤连接质量 ',
+        'end-face-detection': ' 端面检测 ',
+        'high-definition-magnification': ' 高清放大 ',
+        'product-3-magnification': ' 放大倍数：200X/400X/800X',
+        'product-3-display': ' 显示屏：8 英寸 TFT',
+        'best-selling-product': ' 畅销产品 ',
+        'product-4-name': 'YXT-RBJ-10 多芯光纤热剥机 ',
+        'product-4-description': ' 可一次性剥除 1-12 根光纤缓冲层，直达 125μm 包层，适用于多种紧包光缆 ',
+        'fiber-stripping': ' 光纤剥除 ',
+        'multi-core-processing': ' 多芯处理 ',
+        'product-4-stripping-range': ' 剥离范围：900μm 缓冲层至 125μm 包层 ',
+        'product-4-control': ' 微电脑控制，操作简便 ',
+        'product-5-name': ' YXT-CSJ-01 光纤跳线自动穿散件机 ',
+        'product-5-description': ' 本设备采用多个精密震动盘和直震轨道装置进行正反面的识别,应用先进的人工智能PLC程序控制,识别多个操作指令。 ',
+        'high-speed': ' 高速处理 ',
+        'multi-core-processing': ' 多芯处理 ',
+        'product-5-material': ' 机器产能：1000-1300PCS/H ',
+        'product-5-inner-diameter': ' 内径精度：±0.5μm',
+        'product-6-name': 'YXT-DJ-200C 全自动注胶机 ',
+        'product-6-description': ' 采用微电脑控制系统，XYZ 轴日本技术，注胶速度达 3600PCS/H，胶量稳定无滴漏 ',
+        'automatic-gluing': ' 自动注胶 ',
+        'product-6-speed': ' 注胶速度：3600PCS / 小时 ',
+        'product-6-motion-system': ' 运动系统：日本马达 + 台湾导轨 ',
+        'close-modal': ' 关闭 ',
+        'modal-product-1-name': 'FPM-1000A 调速光纤研磨机 ',
+        'modal-product-1-description': 'FPM-1000A 调速光纤研磨机采用四角加压设计，稳定性好，可加工各种标准光纤连接器，适用于 SC/FC/ST/LC/MU 等连接头、PC 及 APC 类型产品的大批量生产。',
+        'processing-capacity': ' 加工能力 ',
+        'speed-range': ' 转速范围 ',
+        'equipment-size': ' 设备尺寸 ',
+        'electrical-parameters': ' 电气参数 ',
+        'product-1-size': '220×320×285mm',
+        'product-1-parameters': '220V, 50/60HZ, 2A',
+        'product-features': ' 产品特性 ',
+        'product-1-feature-1': ' 可加工各种标准光纤连接器：FC/UPC, SC/UPC, ST/UPC, LC/UPC, MU/UPC, FC/APC, SC/APC 等 ',
+        'product-1-feature-2': ' 四角加压设计，稳定性好，适合大批量生产 ',
+        'product-1-feature-3': ' 所有运转材料经过热处理，使用寿命长 ',
+        'product-1-feature-4': ' 研磨盘采用 IFC 结构，精度高、寿命长，端面干涉一次通过率 98% 或以上 ',
+        'product-1-feature-5': ' 操作面板与水平成一定角度，适合操作者观察 ',
+        'consult-purchase': ' 咨询购买 ',
+        'email-consultation': ' 邮件咨询 ',
+        'company-introduction': ' 专业的光纤连接器生产设备制造商，22 年行业经验，国家高新技术企业，拥有 30 多项专利技术。',
+        'quick-links': ' 快速链接 ',
+        'news': ' 新闻动态 ',
+        'product-categories': ' 产品分类 ',
+        'fiber-polishing-equipment': ' 光纤研磨设备 ',
+        'fiber-assembling-equipment': ' 光纤组装设备 ',
+        'fiber-testing-equipment': ' 光纤检测设备 ',
+        'ferrule-production-equipment': ' 插芯生产设备 ',
+        'contact-us': ' 联系我们 ',
+        'address': ' 深圳市宝安区福永街道凤凰兴业三路 3 号美盈 (凤凰) 智汇创新园 A7 栋 405',
+        'phone1': '0755-27915969',
+        'phone2': '13682350300(李红斌)',
+        'phone3': '13538127289(易玉辉)',
+        'email': 'szyxtgd@163.com',
+        'website': 'www.szyxtgd.com',
+        'copyright': '© 2024 深圳市宇讯通光电有限公司 版权所有 | 粤 ICP 备 12345678 号 ',
+        'language-button': ' 中文 ',
+        'product-7-name': 'FPM-3000 编程调速光纤研磨机 ',
+        'product-7-description': ' 可调速的可编程控制光纤研磨机，具有缓慢启动功能及 0-200rpm 的速度选择范围，工艺设定更灵活 ',
+        'product-7-speed': ' 速度范围：0-200转/分钟 ',
+        'product-8-name': 'FPM-5000 编程触摸式光纤研磨机 ',
+        'product-8-description': ' 可加工多种标准光纤连接器，研磨 MTRJ、MTP、MPO 连接器效果更佳，支持 20 种研磨工艺 ',
+        'product-9-name': 'YXT-DJ-200C 全自动注胶机 ',
+        'product-9-description': ' 采用微电脑全自动控制系统，XYZ 轴日本技术，注胶速度达 3600PCS/H，胶量稳定无滴漏，适用于光纤连接器、PLC 分路器等产品的注胶工艺 ',
+        'product-10-name': 'SC 散件组装机 YXT-SCZZ-01',
+        'product-10-description': ' 触摸屏操作 PLC 控制系统，振动盘自动送料，精密直线式传送结构，组装速度 1700-2000pcs/h',
+        'product-11-name': ' 内径陶瓷套圈自动检测机 ',
+        'product-11-description': ' 用于 SC 陶瓷插芯内径尺寸的检测，自动检测和分类识别，双工位检测，精度高、效率快 ',
+        'product-12-name': 'RX-002 MPO 多通道插回损测试仪 ',
+        'product-12-description': ' 内置 1310/1550 光源，支持 12/24 通道，适用于 MPO 连接器的插回损测试，精度高 ',
+        'product-13-name': 'YXT-RBJ-20 光纤热剥机 ',
+        'product-13-description': ' 采用恒温加热技术，可剥除 0.9/1.6/2.0/3.0mm 紧套层，不伤光纤，剥除长度可调 ',
+        'product-14-name': 'YXT-GBJ-01 光纤切割刀 ',
+        'product-14-description': ' 适用于 250μm、900μm、3.0mm 等各种规格光纤，切割角度 < 0.5°，寿命≥30000 次 ',
+        'product-15-name': 'YXT-UVH-02 光纤快速固化炉 ',
+        'product-15-description': ' 采用进口 LED 紫外光源，多工位设计，能量均匀，适用于光纤连接器、PLC 分路器等产品的 UV 胶水固化 ',
+        'product-16-name': 'MARS-ML 系列光纤端面干涉仪 ',
+        'product-16-description': ' 采用 MARS-ML 系列光纤端面干涉仪，可测量 200/400/800 倍放大倍数，精度高、可靠性高 ',
+        'product-17-name': 'YXT-MPODJ-02 MT 插芯全自动点胶机 ',
+        'product-17-description': ' 本设备主要适用MT插芯产品点胶工艺,也可用来检测点胶外观用,设备系统全部采用PLC控制,编程简单,即学即用 ',
+        'product-18-name': 'YXT-WJJC-001 全自动外径检测机 ',
+        'product-18-description': ' 宇讯通系列全自动外径检测机是我司独立设计,采用精确的基恩士激光外径仪作为测量元件,可对陶瓷插芯成品和半成品外径进行6档的精确检测,同时可对光纤光缆及精密针规等产品外径检测,全部操作由机器自动完成(光纤及光缆人工手动完成)。具有准确高效,操作简便等特点。 '
+      },
+      'en': {
+        'company-name': 'Shenzhen Yuxuntong Photoelectricity Co., Ltd.',
+        'home': 'Home',
+        'about': 'Company Introduction',
+        'products': 'Product Center',
+        'contact': 'Contact Us',
+        'hero-title': 'Professional Manufacturer of Optical Fiber Communication Equipment',
+        'hero-subtitle': '22 years of experience in fiber optic connector production | 15 years of experience in equipment manufacturing | Over 30 patented technologies',
+        'product-center-title': 'Product Center',
+        'product-center-subtitle': 'Provide a full range of products including fiber optic polishing, assembly, testing equipment and optical communication components',
+        'all-products': 'All Products',
+        'polishing-equipment': 'Polishing Equipment',
+        'assembling-equipment': 'Assembling Equipment',
+        'testing-equipment': 'Testing Equipment',
+        'ferrule-equipment': 'Ferrule Equipment',
+        'optical-components': 'Optical Communication Components',
+        'stripping-equipment': 'Stripping Equipment',
+        'curing-equipment': 'Curing Equipment',
+        'tech-leading': 'Technical Leading',
+        'hot-product': 'Hot Selling Product',
+        'product-1-name': 'FPM-1000A Speed-Adjustable Fiber Optic Polishing Machine',
+        'product-1-description': 'Four-corner pressure design, capable of processing standard fiber optic connectors such as FC/SC/ST/LC, suitable for mass production of PC and APC products.',
+        'fiber-polishing': 'Fiber Optic Polishing',
+        'high-precision': 'High Precision',
+        'product-1-capacity': 'Processing Capacity: SC: 36 Max / LC: 50 Max',
+        'product-1-speed': 'Adjustable Rotation Speed: 0 - 150 RPM',
+        'view-details': 'View Details',
+        'new-product': 'New Product Launch',
+        'product-2-name': 'YXT-SCYJ-01 Fully Automatic Ceramic Ferrule Crimping Machine',
+        'product-2-description': 'Equipped with automatic feeding, direction recognition, pressing and finished product output functions, improving the efficiency and accuracy of ferrule crimping and reducing labor intensity.',
+        'automatic-crimping': 'Automatic Crimping',
+        'ceramic-ferrule': 'Ceramic Ferrule',
+        'product-2-specification': 'Crimping Specification: SC-250-D(42.499±0.0005mmX10.5mm)',
+        'product-2-efficiency': 'Production Efficiency: 5000 - 6500 pcs/hour',
+        'core-product': 'Core Product',
+        'product-3-name': 'Integrated Fiber Optic End Face Detector',
+        'product-3-description': 'Capable of magnifying the fiber optic end face by 200/400/800 times, quickly detecting dirt, scratches and other defects to ensure the quality of fiber optic connections.',
+        'end-face-detection': 'End Face Detection',
+        'high-definition-magnification': 'High Definition Magnification',
+        'product-3-magnification': 'Magnification: 200X/400X/800X',
+        'product-3-display': 'Display: 8-inch TFT',
+        'best-selling-product': 'Best Selling Product',
+        'product-4-name': 'YXT-RBJ-10 Multi-Core Fiber Optic Thermal Stripper',
+        'product-4-description': 'Capable of stripping the buffer layer of 1 - 12 fiber optics at one time, reaching the 125μm cladding, suitable for various tight-buffered optical cables.',
+        'fiber-stripping': 'Fiber Optic Stripping',
+        'multi-core-processing': 'Multi-Core Processing',
+        'product-4-stripping-range': 'Stripping Range: From 900μm buffer layer to 125μm cladding',
+        'product-4-control': 'Microcomputer control, easy to operate',
+        'product-5-name': 'Automatic threading of optical fiber patch cords machine',
+        'product-5-description': 'This equipment uses a plurality of precision vibrating plates and direct vibration track devices to identify the positive and negative sides, and applies advanced artificial intelligence PLC program control to identify multiple operations Directives.',
+        'high-speed': 'High Speed Processing',
+        'multi-core-processing': 'Multi-Core Processing',
+        'product-5-material': ' Machine capacity: 1000-1300PCS/H ',
+        'product-5-inner-diameter': 'Inner Diameter Accuracy: ±0.5μm',
+        'product-6-name': 'YXT-DJ-200C Fully Automatic Glue Injecting Machine',
+        'product-6-description': 'Adopting a microcomputer control system and Japanese technology for the XYZ axes, with a glue injection speed of 3600 PCS/H and stable glue volume without dripping.',
+        'automatic-gluing': 'Automatic Glue Injecting',
+        'product-6-speed': 'Glue Injection Speed: 3600 PCS/hour',
+        'product-6-motion-system': 'Motion System: Japanese motor + Taiwanese guide rail',
+        'product-7-name': 'FPM-3000 Programmable Speed-Adjustable Fiber Polishing Machine',
+        'product-7-description': 'A speed-adjustable programmable control fiber polishing machine with a slow start function and a speed selection range of 0-200rpm, making process settings more flexible',
+        'product-8-name': 'FPM-5000 Programmable Touch Fiber Polishing Machine',
+        'product-8-description': 'Capable of processing various standard fiber optic connectors, with better polishing effects for MTRJ, MTP, and MPO connectors, supporting 20 polishing processes',
+        'product-9-name': 'YXT-DJ-200C Fully Automatic Glue Injecting Machine',
+        'product-9-description': 'Adopting a microcomputer automatic control system and Japanese technology for the XYZ axes, with a glue injection speed of 3600 PCS/H, stable glue volume without dripping, suitable for glue injection processes of fiber optic connectors, PLC splitters, and other products',
+        'product-10-name': 'SC Component Assembly Machine YXT-SCZZ-01',
+        'product-10-description': 'PLC control system with touch screen operation, automatic feeding by vibration disc, precision linear transmission structure, assembly speed of 1700-2000pcs/h',
+        'product-11-name': 'Automatic Inner Diameter Ceramic Ferrule Inspection Machine',
+        'product-11-description': 'Used for the inspection of the inner diameter of SC ceramic ferrules, with automatic detection and classification recognition, dual-station detection, high precision and fast efficiency',
+        'product-12-name': 'RX-002 MPO Multi-Channel Insertion and Return Loss Tester',
+        'product-12-description': 'Built-in 1310/1550 light sources, supporting 12/24 channels, suitable for insertion and return loss testing of MPO connectors, with high precision',
+        'product-13-name': 'YXT-RBJ-20 Fiber Optic Thermal Stripper',
+        'product-13-description': 'Adopting constant temperature heating technology, capable of stripping 0.9/1.6/2.0/3.0mm tight buffer layers without damaging the fiber, with adjustable stripping length',
+        'product-14-name': 'YXT-GBJ-01 Fiber Optic Cutting Knife',
+        'product-14-description': 'Suitable for various specifications of optical fibers such as 250μm, 900μm, and 3.0mm, with a cutting angle <0.5°, and a service life of ≥30,000 times',
+        'product-15-name': 'YXT-UVH-02 Fiber Optic Quick Curing Furnace',
+        'product-15-description': 'Using imported LED ultraviolet light source, multi-station design, uniform energy, suitable for UV glue curing of fiber optic connectors, PLC splitters, and other products',
+        'product-16-name': 'MARS-ML Fiber Optic End Face Interferometers',
+        'product-16-description': 'The MARS-ML series fiber optic end face interferometer is a high-performance, low-cost, automatic focusing, non-contact fiber optic end face interferometer. It can accurately and quickly measure the radius of curvature (ROC), apex offset, and fiber height of the fiber optic connector end face, the grinding degree and key error of APC fiber optic connectors. Simultaneously display the three-dimensional condition of the surface of the fiber optic connector in the form of color images. The fiber optic end face interferometer is mainly divided into two parts: interferometer and specialized measurement software.',
+        'product-17-name': 'YXT-MPODJ-02 MT Plug-in Core Fully Automatic Dispensing Machine',
+        'product-17-description': 'This equipment is mainly suitable for the dispensing workmanship of MT plug-in core products, and can also be used to detect the appearance of dispensing. The equipment system is fully controlled by PLC, with simple programming that is easy to learn and use immediately.',
+        'product-18-name': 'PLC Optical Splitter',
+        'product-18-description': 'Manufactured by planar optical waveguide technology, with low insertion loss and high reliability, widely used in FTTH network splitting',
+
+        'close-modal': 'Close',
+        'modal-product-1-name': 'FPM-1000A Speed-Adjustable Fiber Optic Polishing Machine',
+        'modal-product-1-description': 'The FPM-1000A speed-adjustable fiber optic polishing machine uses a four-corner pressure design for good stability. It can process various standard fiber optic connectors and is suitable for mass production of SC/FC/ST/LC/MU connectors, PC and APC products.',
+        'processing-capacity': 'Processing Capacity',
+        'speed-range': 'Rotation Speed Range',
+        'equipment-size': 'Equipment Size',
+        'electrical-parameters': 'Electrical Parameters',
+        'product-1-size': '220×320×285mm',
+        'product-1-parameters': '220V, 50/60HZ, 2A',
+        'product-features': 'Product Features',
+        'product-1-feature-1': 'Capable of processing various standard fiber optic connectors: FC/UPC, SC/UPC, ST/UPC, LC/UPC, MU/UPC, FC/APC, SC/APC, etc.',
+        'product-1-feature-2': 'Four-corner pressure design, good stability, suitable for mass production.',
+        'product-1-feature-3': 'All rotating materials are heat-treated for long service life.',
+        'product-1-feature-4': 'The polishing disc uses an IFC structure, with high precision and long service life, and the one-time pass rate of end face interference is 98% or more.',
+        'product-1-feature-5': 'The operation panel is at an angle to the horizontal for easy observation by the operator.',
+        'consult-purchase': 'Consult and Purchase',
+        'email-consultation': 'Email Consultation',
+        'company-introduction': 'A professional manufacturer of fiber optic connector production equipment with 22 years of industry experience, a national high-tech enterprise with over 30 patented technologies.',
+        'quick-links': 'Quick Links',
+        'news': 'News',
+        'product-categories': 'Product Categories',
+        'fiber-polishing-equipment': 'Fiber Optic Polishing Equipment',
+        'fiber-assembling-equipment': 'Fiber Optic Assembling Equipment',
+        'fiber-testing-equipment': 'Fiber Optic Testing Equipment',
+        'ferrule-production-equipment': 'Ferrule Production Equipment',
+        'contact-us': 'Contact Us',
+        'address': 'Room 405, Building A7, Meiying (Fenghuang) Zhihui Innovation Park, No. 3, Xingye 3rd Road, Fenghuang, Fuyong Street, Baoan District, Shenzhen',
+        'phone1': '0755-27915969',
+        'phone2': '13682350300(李红斌)',
+        'phone3': '13538127289(易玉辉)',
+        'email': 'szyxtgd@163.com',
+        'website': 'www.szyxtgd.com',
+        'copyright': '© 2024 Shenzhen Yuxuntong Photoelectricity  Co., Ltd. All rights reserved | Guangdong ICP Preparation No. 12345678',
+        'language-button': 'English',
+        'navDownload': 'Download Materials'
+      }
+    };
+
+    // 语言切换按钮点击事件
+    const languageSwitch = document.getElementById('language-switch');
+    let currentLanguage = 'zh';
+
+    // 检查用户语言偏好
+    document.addEventListener('DOMContentLoaded', function () {
+      const savedLanguage = localStorage.getItem('preferredLanguage');
+      if (savedLanguage && translations[savedLanguage]) {
+        currentLanguage = savedLanguage;
+      }
+
+      const allElements = document.querySelectorAll('[data-key]');
+      allElements.forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[currentLanguage][key]) {
+          element.textContent = translations[currentLanguage][key];
+        }
+      });
+      languageSwitch.querySelector('[data-key="language-button"]').textContent = currentLanguage === 'zh' ? '中文' : 'English';
+    });
+
+    languageSwitch.addEventListener('click', function () {
+      currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
+      const allElements = document.querySelectorAll('[data-key]');
+      allElements.forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[currentLanguage][key]) {
+          element.textContent = translations[currentLanguage][key];
+        }
+      });
+      languageSwitch.querySelector('[data-key="language-button"]').textContent = currentLanguage === 'zh' ? '中文' : 'English';
+      localStorage.setItem('preferredLanguage', currentLanguage);
+    });
+
+    // 显示图片的方法
+    function showImage() {
+      const img = document.createElement('img');
+      img.src = 'public/images/weixin.png';
+      img.style.maxWidth = '100%';
+      img.style.maxHeight = '100%';
+
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.appendChild(img);
+
+      overlay.onclick = function () {
+        document.body.removeChild(overlay);
+      };
+
+      document.body.appendChild(overlay);
+    }
+
+  </script>
+</body>
+
+</html>
