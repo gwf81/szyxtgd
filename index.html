@@ -755,7 +755,7 @@
                 </div>
                 <div>
                   <h4 class="text-lg font-semibold mb-1 lang" key="address">地址</h4>
-                  <p class="text-gray-600">
+                  <p class="text-gray-600" data-key="address1">
                     深圳市宝安区福永街道凤凰兴业三路3号美盈(凤凰)智汇创新园A7栋405
                   </p>
                 </div>
@@ -882,7 +882,7 @@
           <ul class="space-y-3">
             <li class="flex items-start">
               <i class="fa fa-map-marker mt-1 mr-3 text-white/70"></i>
-              <span class="text-white/70">深圳市宝安区福永街道凤凰兴业三路3号美盈(凤凰)智汇创新园A7栋405</span>
+              <span class="text-white/70" data-key="address1">深圳市宝安区福永街道凤凰兴业三路3号美盈(凤凰)智汇创新园A7栋405</span>
             </li>
             <li class="flex items-center">
               <i class="fa fa-phone mr-3 text-white/70"></i>
@@ -906,7 +906,7 @@
 
       <div class="border-t border-white/10 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-white/50 text-sm mb-4 md:mb-0">
+          <p class="text-white/50 text-sm mb-4 md:mb-0" data-key="copyright">
             © 2025 深圳市宇讯通光电有限公司 版权所有 | 粤ICP备XXXXXXXX号
           </p>
           <div class="flex space-x-6">
@@ -1033,6 +1033,8 @@
         navProducts: "产品中心",
         navCompanyDetail: "公司详情",
         navContact: "联系我们",
+        address: "深圳市宝安区福永街道凤凰兴业三路3号美盈(凤凰)智汇创新园A7栋405",
+        copyright: "© 2025 深圳市宇讯通光电有限公司 版权所有 | 粤ICP备XXXXXXXX号",
         currentLang: "中文",
         heroTitle: "专业光纤通信设备制造商",
         heroSubtitle: "22年光纤连接器生产经验 | 15年设备制造经验 | 30+项专利技术",
@@ -1066,7 +1068,6 @@
         professionalSupport: "专业支持",
         professionalSupportDesc: "7×24小时技术支持团队，快速响应客户需求，为客户提供全方位的技术支持和售后服务。",
         categoryAll: "全部产品",
-
         categoryPolishing: "研磨设备",
         categoryAssembling: "组装设备",
         categoryTesting: "检测设备",
@@ -1161,6 +1162,8 @@
         navProducts: "Products",
         navCompanyDetail: "Company Detail",
         navContact: "Contact",
+        address: "Room 405, Building A7, Meiying (Fenghuang) Zhihui Innovation Park, No. 3, Xingye 3rd Road, Fenghuang, Fuyong Street, Baoan District, Shenzhen",
+        copyright: "© 2025 Shenzhen Yuxuntong Photoelectricity Co., Ltd. All rights reserved | Guangdong ICP Preparation No. XXXXXXXX",
         currentLang: "English",
         heroTitle: "Professional Fiber Optic Communication Equipment Manufacturer",
         heroSubtitle: "22 Years of Fiber Optic Connector Production Experience | 15 Years of Equipment Manufacturing Experience | 30+ Patented Technologies",
@@ -1258,6 +1261,7 @@
         submitInquiry: "Submit Inquiry",
         contactInfo: "Contact Information",
         address: "Address",
+
         phone: "Phone",
         email: "Email",
         workingHours: "Working Hours",
@@ -1308,7 +1312,7 @@
     // 切换语言的函数
     function changeLanguage(lang) {
       // 更新当前语言显示
-      languageToggle.querySelector('span').textContent = lang === 'zh' ? '中文' : 'English';
+      languageToggle.querySelector('span').textContent = lang === 'zh-CN' ? '中文' : 'English';
 
       // 更新页面内容
       document.querySelectorAll('.lang').forEach(element => {
@@ -1342,7 +1346,7 @@
       }
 
       // 默认使用中文
-      changeLanguage('zh');
+      changeLanguage('zh-CN');
     }
 
     // 初始化
