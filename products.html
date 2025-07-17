@@ -48,7 +48,82 @@
         backdrop-filter: blur(5px);
       }
     }
-  </style>
+  
+      /* 模态框轮播图样式 */
+      .carousel-container1 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      
+      .carousel-slides {
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .carousel-prev,
+      .carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+      }
+      
+      .carousel-prev:hover,
+      .carousel-next:hover {
+        background-color: white;
+      }
+      
+      .carousel-prev {
+        left: 10px;
+      }
+      
+      .carousel-next {
+        right: 10px;
+      }
+      
+      .carousel-indicators {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        z-index: 10;
+      }
+      
+      .carousel-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .carousel-dot.active {
+        background-color: white;
+      }
+    </style>
 </head>
 
 <body class="font-inter bg-light text-dark">
@@ -242,11 +317,11 @@
                   alt="FPM-3000编程调速光纤研磨机 图1" class="w-full h-full object-cover flex-shrink-0">
                 <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (1).jpg" alt="FPM-3000编程调速光纤研磨机 图2"
                   class="w-full h-full object-cover flex-shrink-0">
-                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (2).jpg" alt="FPM-3000编程调速光纤研磨机 图2"
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (2).jpg" alt="FPM-3000编程调速光纤研磨机 图3"
                   class="w-full h-full object-cover flex-shrink-0">
-                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (3).jpg" alt="FPM-3000编程调速光纤研磨机 图2"
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (3).jpg" alt="FPM-3000编程调速光纤研磨机 图4"
                   class="w-full h-full object-cover flex-shrink-0">
-                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (4).jpg" alt="FPM-3000编程调速光纤研磨机 图2"
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (4).jpg" alt="FPM-3000编程调速光纤研磨机 图5"
                   class="w-full h-full object-cover flex-shrink-0">
               </div>
               <button
@@ -1171,10 +1246,50 @@
           <i class="fa fa-times text-xl"></i>
         </button>
         <div class="grid md:grid-cols-2">
-          <!-- 产品图片 -->
-          <div class="relative h-64 md:h-auto">
-            <img id="modal-image" src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-1000A光纤研磨机.jpg" alt="产品图片"
-              class="w-full h-full object-cover">
+          <!-- 产品图片轮播 -->
+          <div class="relative h-64 md:h-auto" id="modal-carousel-container1">
+            <!-- 产品ID 7的轮播图 -->
+            <div id="product-7-carousel" class="carousel-container1 hidden relative h-full">
+              <div class="carousel-slides h-full transition-transform duration-500 ease-in-out">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-3000编程调速光纤研磨机.jpg"
+                  alt="FPM-3000编程调速光纤研磨机图片1" class="carousel-slide w-full h-full object-cover">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (1).jpg" alt="FPM-3000编程调速光纤研磨机图片2"
+                  class="carousel-slide w-full h-full object-cover">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (2).jpg" alt="FPM-3000编程调速光纤研磨机图片3"
+                  class="carousel-slide w-full h-full object-cover">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (3).jpg" alt="FPM-3000编程调速光纤研磨机图片4"
+                  class="carousel-slide w-full h-full object-cover">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (4).jpg" alt="FPM-3000编程调速光纤研磨机图片5"
+                  class="carousel-slide w-full h-full object-cover">
+              </div>
+              <!-- 导航按钮 -->
+              <button
+                class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-600 p-2 rounded-full focus:outline-none z-10">
+                <i class="fa fa-angle-left text-2xl"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-600 p-2 rounded-full focus:outline-none z-10">
+                <i class="fa fa-angle-right text-2xl"></i>
+              </button>
+              <!-- 指示器 -->
+              <div class="carousel-indicators absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
+                <button
+                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none active"></button>
+                <button
+                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
+                <button
+                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
+                <button
+                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
+                <button
+                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
+              </div>
+            </div>
+            <!-- 其他产品的单张图片 -->
+            <div id="default-modal-image" class="relative h-full">
+              <img id="modal-image" src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-1000A光纤研磨机.jpg" alt="产品图片"
+                class="w-full h-full object-cover">
+            </div>
           </div>
           <!-- 产品详情 -->
           <div class="p-6 md:p-8">
@@ -2886,6 +3001,13 @@
         'product-28-feature6': 'Support qualified quantity prompt',
         'product-28-feature7': 'Support report statistics, can export reports, view reports, clear reports',
         'product-12-name': 'RX-002 MPO Multi-channel Insertion Return Loss Tester',
+
+        // 产品7轮播图图片路径
+        'product-7-image-1': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-3000编程调速光纤研磨机.jpg',
+        'product-7-image-2': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (1).jpg',
+        'product-7-image-3': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (2).jpg',
+        'product-7-image-4': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (3).jpg',
+        'product-7-image-5': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (4).jpg',
         'product-12-description': 'Built-in 1310/1550 light source, supports 12/24 channels for MPO connector insertion and return loss testing with high precision',
         'product-12-channels': 'Channels: 12/24',
         'product-12-accuracy': 'Testing Accuracy: ±0.03dB',
@@ -2977,6 +3099,120 @@
 
     // 绑定语言切换按钮事件
     document.getElementById('language-switch').addEventListener('click', switchLanguage);
+
+    // 产品7模态框轮播图功能
+    let product7CarouselInterval;
+    let currentSlide = 0;
+    const totalSlides = 5;
+
+    // 显示模态框时根据产品ID切换显示轮播图或默认图片
+    document.querySelectorAll('.view-product-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const productId = this.closest('.product-item').dataset.productId;
+        const modalCarousel = document.getElementById('product-7-carousel');
+        const defaultImage = document.getElementById('default-modal-image');
+
+        if (productId === '7') {
+          modalCarousel.classList.remove('hidden');
+          defaultImage.classList.add('hidden');
+          initProduct7Carousel();
+        } else {
+          modalCarousel.classList.add('hidden');
+          defaultImage.classList.remove('hidden');
+          stopProduct7Carousel();
+        }
+      });
+    });
+
+    // 初始化轮播图
+    function initProduct7Carousel() {
+      currentSlide = 0;
+      updateCarouselPosition();
+      updateCarouselDots();
+
+      // 启动自动播放
+      product7CarouselInterval = setInterval(nextSlide, 5000);
+
+      // 添加事件监听
+      document.querySelector('#product-7-carousel .carousel-prev').addEventListener('click', prevSlide);
+      document.querySelector('#product-7-carousel .carousel-next').addEventListener('click', nextSlide);
+
+      // 指示器点击事件
+      document.querySelectorAll('#product-7-carousel .carousel-dot').forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          goToSlide(index);
+        });
+      });
+
+      // 鼠标悬停暂停自动播放
+      const carouselContainer = document.getElementById('product-7-carousel');
+      carouselContainer.addEventListener('mouseenter', stopProduct7Carousel);
+      carouselContainer.addEventListener('mouseleave', startProduct7Carousel);
+    }
+
+    // 停止轮播
+    function stopProduct7Carousel() {
+      if (product7CarouselInterval) {
+        clearInterval(product7CarouselInterval);
+        product7CarouselInterval = null;
+      }
+    }
+
+    // 启动轮播
+    function startProduct7Carousel() {
+      if (!product7CarouselInterval) {
+        product7CarouselInterval = setInterval(nextSlide, 5000);
+      }
+    }
+
+    // 上一张
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarouselPosition();
+      updateCarouselDots();
+    }
+
+    // 下一张
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarouselPosition();
+      updateCarouselDots();
+    }
+
+    // 跳转到指定幻灯片
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarouselPosition();
+      updateCarouselDots();
+    }
+
+    // 更新轮播位置
+    function updateCarouselPosition() {
+      const slidesContainer = document.querySelector('#product-7-carousel .carousel-slides');
+      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // 更新指示器状态
+    function updateCarouselDots() {
+      const dots = document.querySelectorAll('#product-7-carousel .carousel-dot');
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('active');
+          dot.classList.remove('bg-white/50');
+          dot.classList.add('bg-white');
+        } else {
+          dot.classList.remove('active');
+          dot.classList.add('bg-white/50');
+          dot.classList.remove('bg-white');
+        }
+      });
+    }
+
+    // 关闭模态框时停止轮播
+    document.getElementById('close-modal').addEventListener('click', function () {
+      stopProduct7Carousel();
+    });
 
     // 产品轮播图功能
     document.addEventListener('DOMContentLoaded', function () {
