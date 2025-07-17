@@ -390,7 +390,7 @@
         <button
           class="product-tab active bg-primary text-white px-5 py-2 rounded-full text-sm font-medium transition-custom"
           data-category="all">
-          <span class="lang" key="categoryAll">全部产品</span>
+          <span class="lang" key="categoryAll">热销产品</span>
         </button>
         <button
           class="product-tab bg-gray-200 text-gray-700 px-5 py-2 rounded-full text-sm font-medium transition-custom"
@@ -421,37 +421,37 @@
 
       <!-- 产品列表 -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 产品1: FPM-1000A调速光纤研磨机 -->
+
+        <!-- 新增产品: FPM-5000编程触摸式光纤研磨机 -->
         <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
-          data-category="polishing">
+          data-category="polishing" data-product-id="8">
           <div class="relative h-64 overflow-hidden">
-            <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-1000A调速光纤研磨机.jpg" alt="FPM-1000A调速光纤研磨机"
+            <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-5000.png" alt="FPM-5000编程触摸式光纤研磨机"
               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute top-4 left-4 bg-accent text-white text-xs font-semibold px-2.5 py-0.5 rounded lang"
-              key="badgeHot">
-              热销产品
+            <div class="absolute top-4 left-4 bg-primary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+              data-key="core-product">
+              核心产品
             </div>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 lang" key="product1Title">FPM-1000A调速光纤研磨机</h3>
-            <p class="text-gray-600 mb-4 lang" key="product1Desc">
-              四角加压设计，可加工FC/SC/ST/LC等标准光纤连接器，适用于PC及APC产品大批量生产
+            <h3 class="text-xl font-bold mb-2" data-key="product-8-name">FPM-5000编程触摸式光纤研磨机</h3>
+            <p class="text-gray-600 mb-4" data-key="product-8-description">
+              可加工多种标准光纤连接器，研磨MTRJ、MTP、MPO连接器效果更佳，支持20种研磨工艺
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full lang"
-                key="tagPolishing">光纤研磨</span>
-              <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full lang"
-                key="tagHighPrecision">高精度</span>
+              <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                data-key="touch-control">触摸控制</span>
+              <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                data-key="multi-process">多工艺</span>
             </div>
             <div class="space-y-2">
-              <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span class="lang"
-                  key="product1Spec1">加工能力：SC:36 Max / LC:50 Max</span></p>
-              <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span class="lang"
-                  key="product1Spec2">转速可调：0-150转/分钟</span></p>
+              <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                  data-key="product-8-process">支持20种研磨工艺，每种程序6道工序</span>
+              </p>
             </div>
             <a href="products.html"
-              class="mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium lang"
-              key="viewDetails">
+              class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+              data-key="viewDetails">
               查看详情
               <i class="fa fa-angle-right ml-2"></i>
             </a>
@@ -1146,7 +1146,7 @@
         customizedServiceDesc: "根据客户的特定需求，提供个性化的解决方案和定制产品，为客户创造更大价值。",
         professionalSupport: "专业支持",
         professionalSupportDesc: "7×24小时技术支持团队，快速响应客户需求，为客户提供全方位的技术支持和售后服务。",
-        categoryAll: "全部产品",
+        categoryAll: "热销产品",
         categoryPolishing: "研磨设备",
         categoryAssembling: "组装设备",
         categoryTesting: "检测设备",
@@ -1294,7 +1294,7 @@
         professionalSupport: "Professional Support",
         professionalSupportDesc: "A 24/7 technical support team responds quickly to customer needs, providing comprehensive technical support and after-sales service.",
         productsSubtitle: "We provide a full range of products including fiber optic polishing, assembly, testing equipment and optical communication components",
-        categoryAll: "All Products",
+        categoryAll: "Bestsellers",
         categoryPolishing: "Polishing Equipment",
         categoryAssembling: "Assembly Equipment",
         categoryTesting: "Testing Equipment",
