@@ -358,12 +358,12 @@
                 <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
                     data-key="product-1-speed">转速可调：0-150转/分钟</span></p>
               </div>
-              <a href="#"
+              <button
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
                 data-key="view-details">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -422,12 +422,12 @@
                   <span data-key="product-7-capacity">负载能力：36个以上SC或50个以上LC</span>
                 </p>
               </div>
-              <a href="#"
+              <button
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
                 data-key="view-details">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -458,12 +458,12 @@
                     data-key="product-8-process">支持20种研磨工艺，每种程序6道工序</span>
                 </p>
               </div>
-              <a href="#"
+              <button
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
                 data-key="view-details">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -1349,7 +1349,7 @@
               </p>
               <a href="#"
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
-                data-key="view-details">
+                data-key="view-details" data-product-id="32">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
               </a>
@@ -1426,7 +1426,7 @@
               </p>
               <a href="#"
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
-                data-key="view-details">
+                data-key="view-details" data-product-id="34">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
               </a>
@@ -1500,7 +1500,7 @@
               </p>
               <a href="#"
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
-                data-key="view-details">
+                data-key="view-details" data-product-id="35">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
               </a>
@@ -3652,15 +3652,244 @@
       // 产品详情模态框样式
       const style = document.createElement('style');
       style.textContent = `
-        #productModal { z-index: 1000; }
-        .modal-content { position: relative; width: 100%; height: 100%; }
-        .product-carousel-modal { height: 100%; }
-        .carousel-container-modal { height: 100%; }
-        .carousel-prev-modal, .carousel-next-modal { z-index: 10; }
+        #productModal { z-index: 1000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; }
+        #productModal.show { display: flex; }
+        .modal-content { position: relative; width: 100%; height: 100%; max-width: 1200px; max-height: 90vh; }
+        .product-carousel-modal { height: 100%; position: relative; overflow: hidden; }
+        .carousel-container-modal { height: 100%; display: flex; transition: transform 0.5s ease; }
+        .carousel-container-modal img { width: 100%; height: 100%; object-cover; flex-shrink: 0; }
+        .carousel-prev-modal, .carousel-next-modal { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; z-index: 10; }
+        .carousel-prev-modal { left: 20px; }
+        .carousel-next-modal { right: 20px; }
         .carousel-prev-modal:hover, .carousel-next-modal:hover { background-color: rgba(0,0,0,0.8); }
-        .carousel-dots-modal button { cursor: pointer; }
+        .carousel-dots-modal { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+        .carousel-dots-modal button { width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255,255,255,0.5); border: none; cursor: pointer; }
+        .carousel-dots-modal button.active { background-color: white; }
+        #closeModal { position: absolute; top: 20px; right: 20px; background-color: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; z-index: 20; }
+        #closeModal:hover { background-color: rgba(0,0,0,0.8); }
       `;
       document.head.appendChild(style);
+
+      // 产品详情模态框功能
+      document.addEventListener('DOMContentLoaded', function () {
+        // 产品图片数据
+        const productImages = {
+          32: [
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/四角加压研磨盘.png',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/SC-APC-26.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/SC-APC-36.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/SC-PC-24.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/SC-PC-36.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/研磨夹具（宇讯通） (19).jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/FC-APC-36.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/FC-PC-32.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/FC-PC-36快装.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/FC-APC-26.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/LC-APC-26.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/LC-APC-48.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/LC-PC-48(圆）.jpg'
+          ],
+          34: [
+            'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/四角加压研磨盘.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/LC/LC-APC-64.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/ST/ST-PC-36.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/MU/MU-PC-36 (2).jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/E2000研磨夹具/E2000-APC-24.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/E2000研磨夹具/E2000-PC-24.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/定制/CS-PC-72.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/定制/SMA905.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/定制/MDC-PC-72.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/定制/SN-PC-72.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/定制/非标定制夹具.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/定制/小微头-20.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/裸插芯/裸插芯-36.jpg'
+          ],
+          35: [
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/Domaille研磨盘.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/MPO/MT-APC-24(快装）.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/MPO/MT-APC-24.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/MPO/MT-APC-24迷你.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/MPO/MT-PC-24快装.jpg',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/JUMP-PC-24.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/MPO/MPO-PC-24l四角快装研磨盘.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/MPO/MT-PC-24.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/LC/LC-PC-16.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/FC/FC-PC-16.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/SC/sc-apc-12.png',
+            'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/SC/sc-apc-12(裸).png'
+          ]
+        };
+
+        // 创建模态框HTML
+        const modalHTML = `
+          <div id="productModal" class="modal">
+            <div class="modal-content">
+              <button id="closeModal" aria-label="关闭">×</button>
+              <div class="product-carousel-modal">
+                <div class="carousel-container-modal"></div>
+                <button class="carousel-prev-modal" aria-label="上一张">
+                  <i class="fa fa-angle-left"></i>
+                </button>
+                <button class="carousel-next-modal" aria-label="下一张">
+                  <i class="fa fa-angle-right"></i>
+                </button>
+                <div class="carousel-dots-modal"></div>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        // 获取模态框元素
+        const modal = document.getElementById('productModal');
+        const closeModal = document.getElementById('closeModal');
+        const container = document.querySelector('.carousel-container-modal');
+        const prevBtn = document.querySelector('.carousel-prev-modal');
+        const nextBtn = document.querySelector('.carousel-next-modal');
+        const dotsContainer = document.querySelector('.carousel-dots-modal');
+
+        let currentSlide = 0;
+        let slides = [];
+        let autoplayInterval;
+
+        // 打开模态框
+        function openModal(productId) {
+          const images = productImages[productId];
+          if (!images) return;
+
+          // 清空容器
+          container.innerHTML = '';
+          dotsContainer.innerHTML = '';
+
+          // 添加图片
+          images.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `产品 ${productId} 图片 ${index + 1}`;
+            container.appendChild(img);
+
+            // 添加指示器
+            const dot = document.createElement('button');
+            dot.dataset.index = index;
+            if (index === 0) dot.classList.add('active');
+            dotsContainer.appendChild(dot);
+          });
+
+          slides = container.querySelectorAll('img');
+          currentSlide = 0;
+          updateCarousel();
+
+          // 显示模态框
+          modal.classList.add('show');
+
+          // 开始自动轮播
+          startAutoplay();
+
+          // 阻止背景滚动
+          document.body.style.overflow = 'hidden';
+        }
+
+        // 关闭模态框
+        function closeModalFunc() {
+          modal.classList.remove('show');
+          // 停止自动轮播
+          stopAutoplay();
+          // 恢复背景滚动
+          document.body.style.overflow = '';
+        }
+
+        // 更新轮播
+        function updateCarousel() {
+          container.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+          // 更新指示器
+          const dots = dotsContainer.querySelectorAll('button');
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+          });
+        }
+
+        // 下一张
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          updateCarousel();
+        }
+
+        // 上一张
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          updateCarousel();
+        }
+
+        // 跳转到指定幻灯片
+        function goToSlide(index) {
+          currentSlide = index;
+          updateCarousel();
+        }
+
+        // 开始自动轮播
+        function startAutoplay() {
+          stopAutoplay();
+          autoplayInterval = setInterval(nextSlide, 5000);
+        }
+
+        // 停止自动轮播
+        function stopAutoplay() {
+          if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+          }
+        }
+
+        // 绑定查看详情按钮事件
+        document.querySelectorAll('.view-product-btn[data-product-id]').forEach(button => {
+          button.addEventListener('click', function () {
+            const productId = this.dataset.productId;
+            openModal(productId);
+          });
+        });
+
+        // 绑定关闭按钮事件
+        closeModal.addEventListener('click', closeModalFunc);
+
+        // 点击模态框外部关闭
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) {
+            closeModalFunc();
+          }
+        });
+
+        // 绑定导航按钮事件
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // 绑定指示器事件
+        dotsContainer.addEventListener('click', function (e) {
+          if (e.target.tagName === 'BUTTON') {
+            const index = parseInt(e.target.dataset.index);
+            goToSlide(index);
+          }
+        });
+
+        // 鼠标悬停时暂停自动轮播
+        modal.addEventListener('mouseenter', stopAutoplay);
+
+        // 鼠标离开时恢复自动轮播
+        modal.addEventListener('mouseleave', startAutoplay);
+
+        // 键盘事件
+        document.addEventListener('keydown', function (e) {
+          if (!modal.classList.contains('show')) return;
+
+          if (e.key === 'Escape') {
+            closeModalFunc();
+          } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+          } else if (e.key === 'ArrowRight') {
+            nextSlide();
+          }
+        });
+      });
     </script>
 </body>
 
