@@ -495,12 +495,12 @@
                 <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
                     data-key="product-2-efficiency">生产效率：5000-6500pcs/小时</span></p>
               </div>
-              <a href="#"
+              <button
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
                 data-key="view-details">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -1029,12 +1029,12 @@
                   <span data-key="product-21-feature">最大优点：可将芳纶全部剪光</span>
                 </p>
               </div>
-              <a href="#"
+              <button
                 class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
                 data-key="view-details">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -1082,9 +1082,26 @@
 
           <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
             data-category="stripping" data-product-id="24">
-            <div class="relative h-64 overflow-hidden">
-              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/MPO剥皮剪皮机.png" alt="单双芯剥皮剪毛机"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="relative h-64 overflow-hidden product-carousel">
+              <div class="carousel-container h-full flex transition-transform duration-500">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/MPO剥皮剪皮机.png" alt="一体式单芯剥皮剪毛机 图1"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/MPO剥皮剪皮机2.png" alt="一体式单芯剥皮剪毛机 图2"
+                  class="w-full h-full object-cover flex-shrink-0">
+              </div>
+              <button
+                class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-right"></i>
+              </button>
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                <button
+                  class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors active"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+              </div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2" data-key="product-24-name">单双芯剥皮剪毛机</h3>
@@ -1231,34 +1248,232 @@
             </div>
           </div>
 
-          <!-- 新增产品: 96孔蜂窝式固化炉 -->
           <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
-            data-category="curing" data-product-id="26">
+            data-category="pressing" data-product-id="37">
             <div class="relative h-64 overflow-hidden">
-              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/96孔固化炉.png" alt="96孔蜂窝式固化炉"
+              <img src="public/images/宇讯通产品（高清图）/新建文件夹/气动压接机-1T.png" alt="1吨气动压接机"
                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2" data-key="product-26-name">96孔蜂窝式固化炉</h3>
-              <p class="text-gray-600 mb-4" data-key="product-26-description">
-                高密度蜂窝式设计，96孔大容量固化炉，适用于光纤连接器胶水固化，温度均匀性好，固化效率高
+              <h3 class="text-xl font-bold mb-2" data-key="product-37-name">YXT-QYJ-1T 1吨气动压接机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-37-description">
+                1吨气动压接机采用电磁阀控制，最大压力可达1000kgf，适用于各种连接器的压接操作，具有稳定可靠的性能。
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
-                  data-key="curing-furnace">固化炉</span>
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full" data-key="pneumatic">气动控制</span>
                 <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
-                  data-key="high-capacity">大容量</span>
+                  data-key="high-pressure">高压稳定</span>
               </div>
               <div class="space-y-2">
                 <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
-                    data-key="product-26-holes">固化孔数：96孔</span></p>
-                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i>
-                  <span data-key="product-26-design">蜂窝式设计，温度均匀</span>
-                </p>
+                    data-key="product-37-pressure">最大压力：1000 kgf</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-37-air-source">气源：0.6至0.9 Mpa</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-37-voltage">输入电压：220VAC50HZ</span></p>
               </div>
               <a href="#"
-                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
                 data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: YXT-DYJ-1.5T 1.5吨电动压接机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="pressing" data-product-id="38">
+            <div class="relative h-64 overflow-hidden">
+              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/压接机/电动压接机-1.5T.jpg" alt="YXT-DYJ-1.5T 1.5吨电动压接机"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-38-name">YXT-DYJ-1.5T 1.5吨电动压接机</h3>
+              <p class="text-gray-600 mb-4" data-key="product-38-description">
+                1.5吨电动压接机采用电动控制，最大压力可达1500kgf，无需气源，适用于各种连接器的压接操作，性能稳定可靠。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full" data-key="electric">电动控制</span>
+                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
+                  data-key="no-air-source">无需气源</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-38-pressure">最大压力：1500 kgf</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-38-air-source">气源：不需要</span></p>
+                <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
+                    data-key="product-38-voltage">输入电压：220VAC 50HZ</span></p>
+              </div>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
+                data-key="view-details">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 离心机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="curing" data-product-id="39">
+            <div class="relative h-64 overflow-hidden product-carousel">
+              <div class="carousel-container h-full flex transition-transform duration-500">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/离心机.png" alt=" 离心机 图1"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/六孔离心机.png" alt="离心机 图2"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/12孔离心机.png" alt="离心机 图3"
+                  class="w-full h-full object-cover flex-shrink-0">
+
+
+              </div>
+              <button
+                class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-right"></i>
+              </button>
+              <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="high-efficiency">
+                高效率
+              </div>
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                <button
+                  class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors active"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-39-name">离心机 Centrifuga Machine
+              </h3>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details" data-product-id="39">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <!-- 新增产品: 工装机 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="assembling" data-product-id="40">
+            <div class="relative h-64 overflow-hidden product-carousel">
+              <div class="carousel-container h-full flex transition-transform duration-500">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/工装机.png" alt=" 工装机 图1"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FC工装机.jpg" alt="工装机 图2"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/新建文件夹/FC电动工装机.png" alt="工装机 图3"
+                  class="w-full h-full object-cover flex-shrink-0">
+
+
+              </div>
+              <button
+                class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-right"></i>
+              </button>
+              <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="high-efficiency">
+                高效率
+              </div>
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                <button
+                  class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors active"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-40-name">工装机 tooling Machine
+              </h3>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details" data-product-id="40">
+                查看详情
+                <i class="fa fa-angle-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 新增产品: 96孔蜂窝式固化炉 -->
+          <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
+            data-category="curing" data-product-id="36">
+            <div class="relative h-64 overflow-hidden product-carousel">
+              <div class="carousel-container h-full flex transition-transform duration-500">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉.png" alt=" 固化炉 图1"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24位卧式固化炉.jpg" alt="固化炉 图2"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24位多功能固化炉-带板.jpg" alt="固化炉 图3"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24位多功能固化炉.jpg" alt="固化炉 图4"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24孔数显固化炉.jpg" alt="固化炉 图5"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/64位卧式固化炉.jpg" alt="固化炉 图6"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/96孔固化炉.png" alt="固化炉 图7"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/MPO智能固化炉.png" alt="固化炉 图8"
+                  class="w-full h-full object-cover flex-shrink-0"><img
+                  src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/双层固化炉.jpg" alt="固化炉 图9"
+                  class="w-full h-full object-cover flex-shrink-0"><img
+                  src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/热缩管收缩机.jpg" alt="固化炉 图10"
+                  class="w-full h-full object-cover flex-shrink-0"><img
+                  src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/立式固化炉.jpg" alt="固化炉 图11"
+                  class="w-full h-full object-cover flex-shrink-0"><img
+                  src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/胶垫计数器.jpg" alt="固化炉 图12"
+                  class="w-full h-full object-cover flex-shrink-0"><img
+                  src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/阶梯式卧式固化炉.jpg" alt="固化炉 图13"
+                  class="w-full h-full object-cover flex-shrink-0">
+
+              </div>
+              <button
+                class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-right"></i>
+              </button>
+              <div class="absolute top-4 left-4 bg-accent text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="best-selling-product">
+                畅销产品
+              </div>
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                <button
+                  class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors active"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2" data-key="product-36-name">固化炉 Curing Furnace
+              </h3>
+              <a href="#"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
+                data-key="view-details" data-product-id="36">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
               </a>
@@ -1566,6 +1781,7 @@
                 <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (4).jpg" alt="FPM-3000编程调速光纤研磨机图片5"
                   class="carousel-slide w-full h-full object-contain">
               </div>
+
               <!-- 导航按钮 -->
               <button
                 class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-600 p-2 rounded-full focus:outline-none z-10">
@@ -1589,25 +1805,20 @@
                   class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
               </div>
             </div>
-            <!-- 产品ID 33的轮播图 -->
-            <div id="product-33-carousel" class="carousel-container1 hidden relative h-full">
-              <div class="carousel-slides h-full transition-transform duration-500 ease-in-out">
-                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/研磨机系统/FPM-1000Y调速光纤研磨机.jpg" alt="FPM-1000Y调速光纤研磨机图片1"
-                  class="carousel-slide w-full h-full object-contain">
+
+            <!-- 产品21轮播图容器 -->
+            <div id="product-21-carousel" class="hidden carousel-container1">
+              <div class="carousel-slides">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机.jpg" alt="一体式单芯剥皮剪毛机 图1"
+                  class="carousel-slide">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机2.png" alt="一体式单芯剥皮剪毛机 图2"
+                  class="carousel-slide">
               </div>
-              <!-- 导航按钮 -->
-              <button
-                class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-600 p-2 rounded-full focus:outline-none z-10">
-                <i class="fa fa-angle-left text-2xl"></i>
-              </button>
-              <button
-                class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-600 p-2 rounded-full focus:outline-none z-10">
-                <i class="fa fa-angle-right text-2xl"></i>
-              </button>
-              <!-- 指示器 -->
-              <div class="carousel-indicators absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
-                <button
-                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none active"></button>
+              <button class="carousel-prev"><i class="fa fa-angle-left"></i></button>
+              <button class="carousel-next"><i class="fa fa-angle-right"></i></button>
+              <div class="carousel-indicators">
+                <button class="carousel-dot active"></button>
+                <button class="carousel-dot"></button>
               </div>
             </div>
             <!-- 其他产品的单张图片 -->
@@ -2295,6 +2506,36 @@
             "转速可调，调速范围(0-150转/分钟)"
           ]
         },
+        {
+          id: 37,
+          name: "YXT-QYJ-1T 1吨气动压接机",
+          category: "压接",
+          image: "public/images/宇讯通产品（高清图）/新建文件夹/气动压接机-1T.png",
+          description: "1吨气动压接机采用电磁阀控制，最大压力可达1000kgf，适用于各种连接器的压接操作，具有稳定可靠的性能。",
+          specification: "最大压力：1000 kgf",
+          features: [
+            "气动控制",
+            "高压稳定",
+            "操作简便",
+            "立式结构"
+          ],
+          application: "连接器压接、光纤组件制造"
+        },
+        {
+          id: 38,
+          name: "YXT-DYJ-1.5T 1.5吨电动压接机",
+          category: "压接",
+          image: "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/压接机/电动压接机-1.5T.jpg",
+          description: "1.5吨电动压接机采用电动控制，最大压力可达1500kgf，无需气源，适用于各种连接器的压接操作，性能稳定可靠。",
+          specification: "最大压力：1500 kgf",
+          features: [
+            "电动控制",
+            "无需气源",
+            "高压稳定",
+            "操作简便"
+          ],
+          application: "连接器压接、光纤组件制造"
+        }
       ];
 
       // 查看详情按钮点击事件
@@ -3016,6 +3257,20 @@
           'product-26-name': '96孔蜂窝式固化炉',
           'product-26-description': '高密度蜂窝设计，96孔大容量固化炉，适用于光纤连接器胶水固化，温度均匀性好，固化效率高',
           'product-26-holes': '固化孔数：96孔',
+          'product-37-name': 'YXT-QYJ-1T 1吨气动压接机',
+          'product-37-description': '1吨气动压接机采用电磁阀控制，最大压力可达1000kgf，适用于各种连接器的压接操作，具有稳定可靠的性能。',
+          'product-37-pressure': '最大压力：1000 kgf',
+          'product-37-air-source': '气源：0.6至0.9 Mpa',
+          'product-37-voltage': '输入电压：220VAC50HZ',
+          'product-38-name': 'YXT-DYJ-1.5T 1.5吨电动压接机',
+          'product-38-description': '1.5吨电动压接机采用电动控制，最大压力可达1500kgf，无需气源，适用于各种连接器的压接操作，性能稳定可靠。',
+          'product-38-pressure': '最大压力：1500 kgf',
+          'product-38-air-source': '气源：不需要',
+          'product-38-voltage': '输入电压：220VAC 50HZ',
+          'product-38-principle': '操作原理：电动',
+          'product-38-size': '机器尺寸(mm)：390x320x550',
+          'product-38-weight': '净重：30kg',
+
           'product-27-name': '光纤工具及耗材',
           'product-27-description': '提供光纤连接所需的全系列工具和耗材，包括剥线钳、压接工具、清洁笔、研磨材料和各种胶粘剂',
           'product-27-tools': '主要工具：剥线钳、压接工具、清洁笔、研磨工具',
@@ -3370,6 +3625,9 @@
           'product-7-image-3': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (2).jpg',
           'product-7-image-4': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (3).jpg',
           'product-7-image-5': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FPM-3000A (4).jpg',
+          // 产品21轮播图图片路径
+          'product-21-image-1': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机.jpg',
+          'product-21-image-2': 'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机2.png',
           'product-12-description': 'Built-in 1310/1550 light source, supports 12/24 channels for MPO connector insertion and return loss testing with high precision',
           'product-12-channels': 'Channels: 12/24',
           'product-12-accuracy': 'Testing Accuracy: ±0.03dB',
@@ -3420,6 +3678,20 @@
           'product-31-cable-spec': 'Applicable Cables: 0.9-10mm',
           'product-31-cut-length': 'Cable Cutting Length: 0.1-1920 meters',
           'product-31-speed': 'Cable Feeding Speed: 0.1-3.2M/s',
+
+          'product-37-name': 'YXT-QYJ-1T 1-Ton Pneumatic Crimping Machine',
+          'product-37-description': '1-Ton Pneumatic Crimping Machine is controlled by solenoid valve with maximum pressure up to 1000kgf, suitable for crimping various connectors, with stable and reliable performance.',
+          'product-37-pressure': 'Max Pressure: 1000 kgf',
+          'product-37-air-source': 'Air Source: 0.6 to 0.9 Mpa',
+          'product-37-voltage': 'Input Voltage: 220VAC50HZ',
+          'product-38-name': 'YXT-DYJ-1.5T 1.5-Ton Electric Crimping Machine',
+          'product-38-description': '1.5-Ton Electric Crimping Machine is controlled by electric motor with maximum pressure up to 1500kgf, no air source needed, suitable for crimping various connectors, with stable and reliable performance.',
+          'product-38-pressure': 'Max Pressure: 1500 kgf',
+          'product-38-air-source': 'Air Source: Not needed',
+          'product-38-voltage': 'Input Voltage: 220VAC 50HZ',
+          'product-38-principle': 'Operation Principle: Electric',
+          'product-38-size': 'Machine Size(mm): 390x320x550',
+          'product-38-weight': 'Net Weight: 30kg',
 
           'product-32-description': 'Yuxuntong Optoelectronics independently designed a four-corner pressurized grinding disc, which adopts efficient four-corner pressurization technology, which can effectively improve grinding efficiency, reduce grinding costs, and have good wear resistance and weather resistance',
           'product-35-description': 'Yuxuntong Domaille Grinding Disc, which adopts efficient pressurization technology, which can effectively improve grinding efficiency, reduce grinding costs, and have good wear resistance and weather resistance',
@@ -3735,6 +4007,29 @@
             'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/FC/FC-PC-16.png',
             'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/SC/sc-apc-12.png',
             'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/宇讯通研磨夹具/SC/sc-apc-12(裸).png'
+          ],
+          36: ["public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉.png",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24位卧式固化炉.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24位多功能固化炉-带板.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24位多功能固化炉.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/24孔数显固化炉.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/64位卧式固化炉.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/96孔固化炉.png",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/MPO智能固化炉.png",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/双层固化炉.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/热缩管收缩机.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/立式固化炉.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/胶垫计数器.jpg",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/固化炉系统/阶梯式卧式固化炉.jpg"
+
+          ],
+          39: ["public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/离心机.png",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/12孔离心机.png",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/六孔离心机.png",
+          ],
+          40: ["public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/工装机.png",
+            "public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/FC工装机.jpg",
+            "public/images/宇讯通产品（高清图）/新建文件夹/FC电动工装机.png",
           ]
         };
 
