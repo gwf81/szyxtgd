@@ -990,9 +990,26 @@
           <!-- 新增产品: 一体式单芯剥皮剪毛机 -->
           <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
             data-category="stripping" data-product-id="21">
-            <div class="relative h-64 overflow-hidden">
-              <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机.jpg" alt="一体式单芯剥皮剪毛机"
-                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+            <div class="relative h-64 overflow-hidden product-carousel">
+              <div class="carousel-container h-full flex transition-transform duration-500">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机.jpg" alt="一体式单芯剥皮剪毛机 图1"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/自动单芯剥皮剪毛机2.png" alt="一体式单芯剥皮剪毛机 图2"
+                  class="w-full h-full object-cover flex-shrink-0">
+              </div>
+              <button
+                class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-right"></i>
+              </button>
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                <button
+                  class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors active"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+              </div>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2" data-key="product-21-name">一体式单芯剥皮剪毛机</h3>
@@ -3674,6 +3691,7 @@
       document.addEventListener('DOMContentLoaded', function () {
         // 产品图片数据
         const productImages = {
+
           32: [
             'public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/四角加压研磨盘.png',
             'public/images/宇讯通产品（高清图）/宇讯通研磨夹具（高像素图）/SC-APC-26.jpg',
