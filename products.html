@@ -2613,6 +2613,43 @@
           }
         });
       });
+      // 点击图片放大功能
+      const fullscreenViewer = document.createElement('div');
+      fullscreenViewer.id = 'fullscreen-viewer';
+      fullscreenViewer.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-black/95';
+      fullscreenViewer.innerHTML = `
+        <img id="fullscreen-image" src="" alt="全屏图片" class="max-w-full max-h-full">
+        <button id="close-fullscreen" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+      `;
+      document.body.appendChild(fullscreenViewer);
+
+      const fullscreenImage = document.getElementById('fullscreen-image');
+      const closeFullscreen = document.getElementById('close-fullscreen');
+
+      // 点击图片放大
+      modalImage.addEventListener('click', function () {
+        fullscreenImage.src = this.src;
+        fullscreenImage.alt = this.alt;
+        fullscreenViewer.classList.remove('hidden');
+        fullscreenViewer.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // 关闭全屏查看器
+      closeFullscreen.addEventListener('click', function () {
+        fullscreenViewer.classList.add('hidden');
+        fullscreenViewer.classList.remove('flex');
+        document.body.style.overflow = '';
+      });
+
+      // 点击全屏查看器外部关闭
+      fullscreenViewer.addEventListener('click', function (e) {
+        if (e.target === this) {
+          this.classList.add('hidden');
+          this.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      });
 
       // 关闭模态框
       closeModal.addEventListener('click', function () {
