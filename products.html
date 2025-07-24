@@ -802,7 +802,7 @@
                     data-key="product-12-accuracy">测试精度：±0.03dB</span></p>
               </div>
               <a href="#"
-                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-colors duration-300 font-medium"
+                class="view-product-btn mt-4 inline-flex items-center text-primary hover:text-accent transition-custom font-medium"
                 data-key="view-details">
                 查看详情
                 <i class="fa fa-angle-right ml-2"></i>
@@ -2031,6 +2031,34 @@
                   class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
                 <button
                   class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
+                <button
+                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
+              </div>
+            </div>
+
+            <!-- 产品ID 44的轮播图 -->
+            <div id="product-44-carousel" class="carousel-container1 hidden relative h-full">
+              <div class="carousel-slides h-full transition-transform duration-500 ease-in-out">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/端面检测仪/一体式光纤端面检测仪.jpg" alt="一体式光纤端面检测仪图片1"
+                  class="carousel-slide w-full h-full object-contain">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/端面检测仪/一体式高清光纤端面检测仪.jpg" alt="一体式光纤端面检测仪图片2"
+                  class="carousel-slide w-full h-full object-contain">
+              </div>
+
+              <!-- 导航按钮 -->
+              <button
+                class="carousel-prev absolute top-
+1/2 left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-600 p-2 rounded-full focus:outline-none z-10">
+                <i class="fa fa-angle-left text-2xl"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-600 p-2 rounded-full focus:outline-none z-10">
+                <i class="fa fa-angle-right text-2xl"></i>
+              </button>
+              <!-- 指示器 -->
+              <div class="carousel-indicators absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
+                <button
+                  class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none active"></button>
                 <button
                   class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white focus:outline-none"></button>
               </div>
@@ -3961,22 +3989,92 @@
     let currentSlide = 0;
     const totalSlides = 5;
 
+    // 产品44模态框轮播图功能
+    let product44CarouselInterval;
+    let currentSlide44 = 0;
+    const totalSlides44 = 2;
+
+    function initProduct44Carousel() {
+      currentSlide44 = 0;
+      updateCarouselPosition44();
+      updateCarouselDots44();
+
+      // 启动自动播放
+      product44CarouselInterval = setInterval(nextSlide44, 5000);
+
+      // 添加事件监听
+      document.querySelector('#product-44-carousel .carousel-prev').addEventListener('click', prevSlide44);
+      document.querySelector('#product-44-carousel .carousel-next').addEventListener('click', nextSlide44);
+
+      // 指示器点击事件
+      document.querySelectorAll('#product-44-carousel .carousel-dot').forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          goToSlide44(index);
+        });
+      });
+    }
+
+    function updateCarouselPosition44() {
+      const slides = document.querySelector('#product-44-carousel .carousel-slides');
+      slides.style.transform = `translateX(-${currentSlide44 * 100}%)`;
+    }
+
+    function updateCarouselDots44() {
+      const dots = document.querySelectorAll('#product-44-carousel .carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide44);
+        dot.classList.toggle('bg-white', index === currentSlide44);
+        dot.classList.toggle('bg-white/50', index !== currentSlide44);
+      });
+    }
+
+    function nextSlide44() {
+      currentSlide44 = (currentSlide44 + 1) % totalSlides44;
+      updateCarouselPosition44();
+      updateCarouselDots44();
+    }
+
+    function prevSlide44() {
+      currentSlide44 = (currentSlide44 - 1 + totalSlides44) % totalSlides44;
+      updateCarouselPosition44();
+      updateCarouselDots44();
+    }
+
+    function goToSlide44(index) {
+      currentSlide44 = index;
+      updateCarouselPosition44();
+      updateCarouselDots44();
+    }
+
+    function stopProduct44Carousel() {
+      clearInterval(product44CarouselInterval);
+    }
+
     // 显示模态框时根据产品ID切换显示轮播图或默认图片
     document.querySelectorAll('.view-product-btn').forEach(btn => {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         const productId = this.closest('.product-item').dataset.productId;
-        const modalCarousel = document.getElementById('product-7-carousel');
+        const product7Carousel = document.getElementById('product-7-carousel');
+        const product44Carousel = document.getElementById('product-44-carousel');
         const defaultImage = document.getElementById('default-modal-image');
 
+        // 隐藏所有轮播图并停止自动播放
+        product7Carousel.classList.add('hidden');
+        product44Carousel.classList.add('hidden');
+        stopProduct7Carousel();
+        stopProduct44Carousel();
+
         if (productId === '7') {
-          modalCarousel.classList.remove('hidden');
+          product7Carousel.classList.remove('hidden');
           defaultImage.classList.add('hidden');
           initProduct7Carousel();
+        } else if (productId === '44') {
+          product44Carousel.classList.remove('hidden');
+          defaultImage.classList.add('hidden');
+          initProduct44Carousel();
         } else {
-          modalCarousel.classList.add('hidden');
           defaultImage.classList.remove('hidden');
-          stopProduct7Carousel();
         }
       });
     });
