@@ -578,37 +578,30 @@
           <!-- 新增产品: 一体式光纤端面检测仪 -->
           <div class="product-item product-card-hover bg-white rounded-xl overflow-hidden shadow-lg"
             data-category="detection" data-product-id="44">
-            <div class="relative h-64 overflow-hidden">
-              <div class="carousel relative" id="product-44-carousel">
-                <!-- 轮播图片容器 -->
-                <div class="carousel-slides flex transition-transform duration-500">
-                  <div class="carousel-slide min-w-full">
-                    <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/端面检测仪/一体式光纤端面检测仪.jpg" alt="YXT-TS001 一体式光纤端面检测仪"
-                      class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                  </div>
-                  <div class="carousel-slide min-w-full">
-                    <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/端面检测仪/一体式高清光纤端面检测仪.jpg"
-                      alt="YXT-TS002 一体式光纤端面检测仪"
-                      class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-                  </div>
-                </div>
-                <!-- 轮播控制按钮 -->
+            <div class="relative h-64 overflow-hidden product-carousel">
+              <div class="carousel-container h-full flex transition-transform duration-500">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/端面检测仪/一体式光纤端面检测仪.jpg" alt="YXT-TS001 一体式光纤端面检测仪"
+                  class="w-full h-full object-cover flex-shrink-0">
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/端面检测仪/一体式高清光纤端面检测仪.jpg" alt="YXT-TS002 一体式光纤端面检测仪"
+                  class="w-full h-full object-cover flex-shrink-0">
+              </div>
+              <button
+                class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <button
+                class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors">
+                <i class="fa fa-angle-right"></i>
+              </button>
+              <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-semibold px-2.5 py-0.5 rounded"
+                data-key="tech-leading">
+                技术领先
+              </div>
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
                 <button
-                  class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md z-10"
-                  onclick="prevSlide('product-44-carousel')">
-                  <i class="fa fa-angle-left text-xl"></i>
-                </button>
-                <button
-                  class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md z-10"
-                  onclick="nextSlide('product-44-carousel')">
-                  <i class="fa fa-angle-right text-xl"></i>
-                </button>
-                <!-- 轮播指示器 -->
-                <div class="carousel-indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-                  <button class="w-3 h-3 rounded-full bg-white" onclick="goToSlide('product-44-carousel', 0)"></button>
-                  <button class="w-3 h-3 rounded-full bg-white/50"
-                    onclick="goToSlide('product-44-carousel', 1)"></button>
-                </div>
+                  class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors active"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+
               </div>
             </div>
             <div class="p-6">
