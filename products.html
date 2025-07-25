@@ -861,7 +861,7 @@
                 <span class="bg-accent/10 text-accent text-xs px-2 py-1 rounded-full"
                   data-key="high-precision">高精度</span>
                 <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full"
-                  data-key="fast-testing">快速检测</span>
+                  data-key="quick-detection">快速检测</span>
               </div>
               <div class="space-y-2">
                 <p class="text-sm text-gray-500"><i class="fa fa-dot-circle-o text-accent mr-2"></i> <span
@@ -1384,7 +1384,7 @@
                 全自动剥皮剪毛机，独立设计，符合人体工程学，实现剥缆、剪芳纶、纵切一次完成，双工作模式可选
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full"
+                <span class="bg-pridouble-coremary/10 text-primary text-xs px-2 py-1 rounded-full"
                   data-key="double-core">双芯处理</span>
                 <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full"
                   data-key="multi-mode">双模式</span>
@@ -3688,15 +3688,15 @@
 
       // 更新模态框内容
       modalImage.src = product.image;
-      modalImage.alt = currentLanguage === 'en' ? product.name_en : product.name_en;
-      modalTitle.textContent = currentLanguage === 'en' ? product.name : product.name_en;
-      modalCategory.textContent = currentLanguage === 'en' ? product.category : product.category_en;
-      modalDescription.textContent = currentLanguage === 'en' ? product.description : product.description_en;
+      modalImage.alt = currentLanguage === 'en' ? product.name_en : product.name;
+      modalTitle.textContent = currentLanguage === 'en' ? product.name_en : product.name;
+      modalCategory.textContent = currentLanguage === 'en' ? product.category_en : product.category;
+      modalDescription.textContent = currentLanguage === 'en' ? product.description_en : product.description;
 
       // 添加规格参数的显示
       const specificationElement = document.getElementById('modal-specification');
       if (product.specification) {
-        specificationElement.textContent = currentLanguage === 'en' ? "设备参数: " + product.specification : "specification: " + product.specification_en;
+        specificationElement.textContent = currentLanguage === 'en' ? "specification: " + product.specification_en : "设备参数:  " + product.specification;
         specificationElement.style.display = 'block';
       } else {
         specificationElement.style.display = 'none';
@@ -3725,7 +3725,7 @@
         if (product) {
           const nameElement = item.querySelector(`[data-key="product-${productId}-name"]`);
           if (nameElement) {
-            nameElement.textContent = currentLanguage === 'en' ? (product.name_en || product.name) : product.name;
+            nameElement.textContent = currentLanguage === 'en' ? product.name_en : product.name;
           }
           const categoryElement = item.querySelector('.bg-primary\\/10.text-primary.text-xs.px-2.py-1.rounded-full');
           if (categoryElement && product.category_en) {
@@ -3746,15 +3746,15 @@
 
         if (product) {
           modalImage.src = product.image;
-          modalImage.alt = currentLanguage === 'en' ? product.name : product.name_en;
-          modalTitle.textContent = currentLanguage === 'en' ? product.name : product.name_en;
-          modalCategory.textContent = currentLanguage === 'en' ? product.category : product.category_en;
-          modalDescription.textContent = currentLanguage === 'en' ? product.description : product.description_en;
+          modalImage.alt = currentLanguage === 'en' ? product.name_en : product.name;
+          modalTitle.textContent = currentLanguage === 'en' ? product.name_en : product.name;
+          modalCategory.textContent = currentLanguage === 'en' ? product.category_en : product.category;
+          modalDescription.textContent = currentLanguage === 'en' ? product.description_en : product.description;
 
           // 添加规格参数的显示
           const specificationElement = document.getElementById('modal-specification');
           if (product.specification) {
-            specificationElement.textContent = currentLanguage === 'en' ? "设备参数: " + product.specification : "specification: " + product.specification_en;
+            specificationElement.textContent = currentLanguage === 'en' ? "specification: " + product.specification_en : "设备参数: " + product.specification;
             specificationElement.style.display = 'block';
           } else {
             specificationElement.style.display = 'none';
@@ -3763,7 +3763,7 @@
           // 清空并重新添加特性列表
           modalFeatures.innerHTML = '';
           if (product.features) {
-            product.features = currentLanguage === 'en' ? product.features : product.features_en
+            product.features = currentLanguage === 'en' ? product.features_en : product.features
             product.features.forEach(feature => {
               const li = document.createElement('li');
               li.className = 'flex items-start';
@@ -3964,6 +3964,21 @@
         'product-44-magnification': ' 放大倍数：200X/400X/800X',
         'product-44-display': ' 显示屏：8 英寸 TFT',
         'best-selling-product': ' 畅销产品 ',
+        'digital-display': '数字显示',
+
+        'double-core': '双核处理',
+        'multi-mode': '多模式',
+
+        'quick-detection': '快速检测',
+        'safe-observation': '安全观察',
+        'high-magnification': '高倍率放大',
+
+        'electric': '电动控制',
+        'no-air-source': '无需气源',
+
+
+        'product-9-speed': '注胶速度：600-800PCS/小时',
+        'product-9-control-system': '控制系统：微电脑全自动',
 
         'product-4-name': 'YXT-RBJ-10 多芯光纤热剥机 ',
         'product-4-description': ' 可一次性剥除 1-12 根光纤缓冲层，直达 125μm 包层，适用于多种紧包光缆 ',
@@ -4104,6 +4119,15 @@
         'product-4-spec1': '剥离范围：900μm→125μm',
         'product-4-spec2': '剥除一致性：±1μm',
 
+        'automatic-focus': '自动聚焦',
+
+        'integrated': '绕线扎线一体化',
+
+        'pneumatic': '气动控制',
+        'high-pressure': '高压稳定',
+
+        'product-12-light-source': '光源稳定性：0.01dB',
+
         'product-3-name': 'SMX-8QM 多芯干涉仪',
         'product-3-description': '美国的SMX-8QM可用于检测MT、MPO、MTP和MT-RJ的PC和APC连接器端面的3D参数',
         'product-3-measurement-tech': '测量技术：非接触式；迈克尔逊',
@@ -4126,10 +4150,13 @@
         'product-3-feature5': '符合国际工业标准（IEC、Telcordia）',
         'product-3-feature6': '高性价比（自动和手动测试方式），连接简单，电脑自配',
 
+        'mpo-test': 'MPO测试',
+
         'product-9-name': 'YXT-4ZDJ-200C光学装置四轴点胶机',
         'product-9-description': '采用微电脑全自动控制系统，操作简单。独特设计工装夹具，摆放方便。XYZ轴采用日本点胶技术，双导轨平行支撑，传动精度高、性能稳定。运动主要部件采用日本电机+美国同步带、台湾线性导轨，使用精度高、寿命长。设备适用于光模块COB/BOSA/ROSA/TOSA大部分光器件点胶，注胶速度快(600-800PCS/H)，注胶量一致性强，胶量稳定，节省了人力物力，点胶速度可随意可调。',
 
 
+        'non-contact': '非接触式测量',
 
 
         'product-5-spec1': '插入损耗：≤0.1dB',
@@ -4159,6 +4186,10 @@
         "table-repeatability": "重复性",
         "table-reproducibility": "复现性",
 
+        'product-13-speed1': '绕线速度：1200条/小时',
+        'product-13-speed2': '扎线效率：1800条/小时',
+        'product-13-application': '适用范围：光纤连接器、电源线、数据线等',
+
         // 参数翻译 - 中文
         "param-roc": "曲率半径(mm)",
         "param-roc-range": "3~∞",
@@ -4184,6 +4215,8 @@
         "param-apex-offset-range": "±1",
         "param-apex-offset-repeat": "±0.01",
         "param-apex-offset-reproduce": "±0.02",
+
+        'automatic-dispensing': '自动点胶',
 
         'product-17-name': 'YXT-MPODJ-02 MT插芯全自动点胶机',
         'product-17-description': '本设备主要适用于MT插芯产品的点胶工艺，也可用于点胶外观检测。设备系统采用PLC全控制，编程简单，易于学习和即时使用。',
@@ -4216,6 +4249,9 @@
         'product-24-feature2': '生产效率高（1500根/小时左右），无需熟练人员',
         'product-24-feature3': '剥外皮长度可调，刀片更换简单方便',
         'product-24-feature4': '废料专用袋收集，保障生产场地整洁',
+        'product-33-speed': '0-150转/分钟',
+        'product-33-dimension': '设备尺寸：220×320×285mm',
+        'product-33-capacity': '负载能力：SC:36 Max / LC:50 Max',
 
         'product-28-name': 'MPO线序测试仪',
         'product-28-description': '设备型号：YXT-XXCSY-01，主要用于迷你缆/带状缆/900u/250u/4芯、8芯、12芯、16芯 24芯系列产品线序测试',
@@ -4226,6 +4262,10 @@
         'product-28-feature5': '支持多个胶壳按顺序检测',
         'product-28-feature6': '支持合格数量提示',
         'product-28-feature7': '支持报表统计，可以导出报表、查看报表、清空报表',
+
+        'environmental': '环保安全',
+        'high-efficiency': '高效率',
+        'humanized': '人性化系统',
 
         // ... existing code ...
         product_29_name: 'RX-001插回损测试仪',
@@ -4390,6 +4430,7 @@
         'product-27-consumables': 'Consumables: Polishing Pads, Adhesives, Cleaners, Ferrules',
         'load-more-products': 'Load More Products',
         'consult-purchase': 'Consult Purchase',
+        'digital-display': 'digital-display',
         'email-consultation': 'Email Consultation',
         'product-5-description': 'Equipped with multiple precision vibration plates and linear vibration tracks for front/back recognition, using advanced AI PLC control to identify multiple operation commands',
         'product-5-material': 'Machine Capacity: 1000-1300PCS/H',
@@ -4447,6 +4488,8 @@
         "param-weight-1": "4kg",
         "param-weight-2": "4kg",
 
+        "automatic-dispensing": "automatic-dispensing",
+
         'best-selling-product': 'Best Selling Product',
         'product-4-name': 'YXT-RBJ-10 Multi-Core Fiber Optic Thermal Stripper',
         'product-4-description': 'Capable of stripping the buffer layer of 1 - 12 fiber optics at one time, reaching the 125μm cladding, suitable for various tight-buffered optical cables.',
@@ -4469,6 +4512,10 @@
         'product-7-description': 'A speed-adjustable programmable control fiber polishing machine with a slow start function and a speed selection range of 0-200rpm, making process settings more flexible',
         'product-8-name': 'FPM-5000 Programmable Touch Fiber Polishing Machine',
         'product-8-description': 'Capable of processing various standard fiber optic connectors, with better polishing effects for MTRJ, MTP, and MPO connectors, supporting 20 polishing processes',
+
+
+        'electric': 'electric',
+        'no-air-source': 'no-air-source',
 
         'product-10-name': 'SC Component Assembly Machine YXT-SCZZ-01',
         'product-10-description': 'PLC control system with touch screen operation, automatic feeding by vibration disc, precision linear transmission structure, assembly speed of 1700-2000pcs/h',
@@ -4504,20 +4551,35 @@
         "param-height-repeat": "±0.5",
         "param-height-reproduce": "±0.7",
 
+        'product-13-speed1': 'Winding speed: 1,200 strands /h',
+        'product-13-speed2': 'Wiring efficiency: 1,800 wires /h',
+        'product-13-application': 'Scope of application: Optical fiber connectors, power cords, data cables, etc',
+
         "param-apc-key-error": "APC Key Error(°)",
         "param-apc-key-error-range": "0~500",
         "param-apc-key-error-repeat": "±0.5",
         "param-apc-key-error-reproduce": "±1",
+
+        'quick-detection': 'quick-detection',
+        'safe-observation': 'safe-observation',
+        'high-magnification': 'high-magnification',
 
         "param-apc-angle": "APC Polishing Angle(°)",
         "param-apc-angle-range": "7~9",
         "param-apc-angle-repeat": "±0.01",
         "param-apc-angle-reproduce": "±0.02",
 
+        'product-12-light-source': 'Light source stability: 0.01 dB',
+
+        'product-9-speed': 'Gluing speed: 600 - 800 pieces per hour',
+        'product-9-control-system': 'Control system: Microcomputer fully automatic',
+
         "param-apex-offset": "Apex Offset(μm)",
         "param-apex-offset-range": "±1",
         "param-apex-offset-repeat": "±0.01",
         "param-apex-offset-reproduce": "±0.02",
+
+        'automatic-focus': 'Automatic Focus',
 
         'product-17-name': 'YXT-MPODJ-02 MT Plug-in Core Fully Automatic Dispensing Machine',
         'product-17-description': 'This equipment is mainly suitable for the dispensing workmanship of MT plug-in core products, and can also be used to detect the appearance of dispensing. The equipment system is fully controlled by PLC, with simple programming that is easy to learn and use immediately.',
@@ -4558,6 +4620,19 @@
         'language-button': 'English',
         'navDownload': 'Download Materials',
 
+        'integrated': 'integrated',
+
+        'double-core': 'double-core',
+        'multi-mode': 'multi-mode',
+
+        'environmental': 'environmental',
+        'high-efficiency': 'efficiency',
+        'humanized': 'humanized',
+
+
+        'mpo-test': 'MPO Test',
+
+        'non-contact': 'Non-Contact',
 
         'company-name': 'Yuxuntong Optoelectronics',
         'home': 'Home',
@@ -4793,6 +4868,11 @@
         'product-31-cut-length': 'Cable Cutting Length: 0.1-1920 meters',
         'product-31-speed': 'Cable Feeding Speed: 0.1-3.2M/s',
 
+
+        'product-33-speed': 'Speed Range: 0-150 rpm',
+        'product-33-dimension': 'Dimensions: 220×320×285mm',
+        'product-33-capacity': 'Load Capacity: SC:36 Max / LC:50 Max',
+
         'product-37-name': 'YXT-QYJ-1T 1-Ton Pneumatic Crimping Machine',
         'product-37-description': '1-Ton Pneumatic Crimping Machine is controlled by solenoid valve with maximum pressure up to 1000kgf, suitable for crimping various connectors, with stable and reliable performance.',
         'product-37-pressure': 'Max Pressure: 1000 kgf',
@@ -4806,6 +4886,9 @@
         'product-38-principle': 'Operation Principle: Electric',
         'product-38-size': 'Machine Size(mm): 390x320x550',
         'product-38-weight': 'Net Weight: 30kg',
+
+        'pneumatic': 'pneumatic',
+        'high-pressure': 'high-pressure',
 
 
         "product-42-name": "YXT-PXQD-01 Leather Wire Hanging Wire Cutting Machine",
@@ -4972,47 +5055,47 @@
         'product-35-description': 'Yuxuntong Domaille Grinding Disc, which adopts efficient pressurization technology, which can effectively improve grinding efficiency, reduce grinding costs, and have good wear resistance and weather resistance',
       }
     };
-
-    // 语言切换功能
-    function switchLanguage() {
-      const currentLang = document.documentElement.lang;
-      const newLang = currentLang === 'zh-CN' ? 'en' : 'zh-CN';
-      document.documentElement.lang = newLang;
-
-      // 更新所有带data-key的元素文本
-      document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (translations[newLang][key]) {
-          element.textContent = translations[newLang][key];
+    /* 
+        // 语言切换功能
+        function switchLanguage() {
+          const currentLang = document.documentElement.lang;
+          const newLang = currentLang === 'zh-CN' ? 'en' : 'zh-CN';
+          document.documentElement.lang = newLang;
+    
+          // 更新所有带data-key的元素文本
+          document.querySelectorAll('[data-key]').forEach(element => {
+            const key = element.getAttribute('data-key');
+            if (translations[newLang][key]) {
+              element.textContent = translations[newLang][key];
+            }
+          });
+    
+    
+    
+          // 更新语言按钮文本
+          document.querySelector('#language-switch span').textContent = translations[newLang]['language-button'];
+    
+          // 存储用户语言偏好
+          localStorage.setItem('preferred-language', newLang);
         }
-      });
-
-
-
-      // 更新语言按钮文本
-      document.querySelector('#language-switch span').textContent = translations[newLang]['language-button'];
-
-      // 存储用户语言偏好
-      localStorage.setItem('preferred-language', newLang);
-    }
-
-    // 初始化语言
-    document.addEventListener('DOMContentLoaded', function () {
-      const savedLang = localStorage.getItem('preferred-language') || 'zh-CN';
-      document.documentElement.lang = savedLang;
-      document.querySelector('#language-switch span').textContent = translations[savedLang]['language-button'];
-
-      // 更新所有带data-key的元素文本
-      document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (translations[savedLang][key]) {
-          element.textContent = translations[savedLang][key];
-        }
-      });
-    });
-
-    // 绑定语言切换按钮事件
-    document.getElementById('language-switch').addEventListener('click', switchLanguage);
+    
+        // 初始化语言
+        document.addEventListener('DOMContentLoaded', function () {
+          const savedLang = localStorage.getItem('preferred-language') || 'zh-CN';
+          document.documentElement.lang = savedLang;
+          document.querySelector('#language-switch span').textContent = translations[savedLang]['language-button'];
+    
+          // 更新所有带data-key的元素文本
+          document.querySelectorAll('[data-key]').forEach(element => {
+            const key = element.getAttribute('data-key');
+            if (translations[savedLang][key]) {
+              element.textContent = translations[savedLang][key];
+            }
+          });
+        });
+    
+        // 绑定语言切换按钮事件
+        document.getElementById('language-switch').addEventListener('click', switchLanguage); */
 
     // 产品7模态框轮播图功能
     let product7CarouselInterval;
@@ -5478,29 +5561,7 @@
       });
     });
 
-    // 语言切换功能
-    document.addEventListener('DOMContentLoaded', function () {
-      const languageSwitch = document.getElementById('language-switch');
-      let isChinese = true;
 
-      languageSwitch.addEventListener('click', function () {
-        isChinese = !isChinese;
-        const zhElements = document.querySelectorAll('.zh-CN');
-        const enElements = document.querySelectorAll('.en-US');
-
-        if (isChinese) {
-          zhElements.forEach(el => el.classList.remove('hidden'));
-          enElements.forEach(el => el.classList.add('hidden'));
-          languageSwitch.querySelector('[data-key="language-button"]').textContent = '中文';
-          document.documentElement.lang = 'zh-CN';
-        } else {
-          zhElements.forEach(el => el.classList.add('hidden'));
-          enElements.forEach(el => el.classList.remove('hidden'));
-          languageSwitch.querySelector('[data-key="language-button"]').textContent = 'English';
-          document.documentElement.lang = 'en-US';
-        }
-      });
-    });
 
     // 产品详情模态框样式
     const style = document.createElement('style');
