@@ -277,11 +277,11 @@
           </div>
           <div class="flex items-center">
             <div class="ml-4 flex items-center md:ml-6">
-              <button type="button"
+              <!-- <button type="button"
                 class="p-1 rounded-full text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
                 <span class="sr-only">搜索</span>
                 <i class="fa fa-search text-lg"></i>
-              </button>
+              </button> -->
             </div>
             <div class="ml-4 flex items-center md:hidden">
               <button type="button" id="mobile-menu-button"
@@ -2733,6 +2733,7 @@
   </script>
   <script>
     // 导航栏滚动效果
+    // 导航栏滚动效果
     window.addEventListener('scroll', function () {
       const navbar = document.getElementById('navbar');
       if (window.scrollY > 50) {
@@ -2747,9 +2748,11 @@
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileMenuButton.addEventListener('click', function () {
-      mobileMenu.classList.toggle('hidden');
-    });
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
     // 产品分类筛选
     const productTabs = document.querySelectorAll('.product-tab');
@@ -3790,7 +3793,7 @@
           element.textContent = translations[currentLanguage][key];
         }
       });
-      languageSwitch.querySelector('[data-key="language-button"]').textContent = currentLanguage === 'zh-CN' ? '中文' : 'English';
+      languageSwitch.querySelector('[data-key="language-button"]').textContent = currentLanguage === 'zh-CN' ? 'English' : '中文';
       localStorage.setItem('preferredLanguage', currentLanguage);
     });
 
@@ -5917,7 +5920,7 @@
           img.classList.add('modal-product-image'); // 添加类名以便样式控制
           container.appendChild(img);
 
-          / / / 添加点击事件以放大图片 - 移动到这里确保每个图片都绑定事件
+          // 添加点击事件以放大图片 - 移动到这里确保每个图片都绑定事件
           img.addEventListener('click', function (e) {
             e.stopPropagation(); // 防止事件冒泡
             const viewerImage = document.getElementById('viewer-image');
