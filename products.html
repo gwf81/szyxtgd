@@ -28,6 +28,94 @@
   </script>
   <style type="text/tailwindcss">
 
+    .image-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2147483647;
+}
+
+.image-viewer.hidden {
+  display: none;
+}
+
+#viewer-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#close-viewer {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 移动端适配 - 新增 */
+@media (max-width: 768px) {
+  #close-viewer {
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+  }
+
+  .modal-content {
+    width: 95% !important;
+    max-height: 90vh !important;
+  }
+
+  .carousel-prev-modal, .carousel-next-modal {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carousel-dots-modal button {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+    .image-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2147483647;
+}
+
+.image-viewer.hidden {
+  display: none;
+}
+
+#viewer-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#close-viewer {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 
     .carousel-slide {
   cursor: zoom-in; /* 鼠标悬停显示放大图标 */
@@ -164,14 +252,7 @@
               <a href="public/file/2024年宇讯通彩页.pdf"
                 class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom"
                 data-key="navDownload" download>资料下载</a>
-              <div id="image-viewer"
-                class="fixed inset-0 bg-black/90 z-[100001] hidden flex items-center justify-center"
-                style="position: fixed !important; z-index: 100001 !important;">
-                <button id="close-viewer" class="absolute top-4 right-4 text-white text-3xl z-[100001]"
-                  style="position: absolute !important; z-index: 100001 !important;">&times;</button>
-                <img id="viewer-image" src="" alt="放大查看" class="max-w-full max-h-full object-contain z-[100002]"
-                  style="position: relative !important; z-index: 100001 !important;">
-              </div>
+
               <div class="flex items-center">
                 <div class="ml-4 flex items-center md:ml-6">
                   <button type="button"
@@ -4096,7 +4177,7 @@
         'product-15-name': 'YXT-UVH-02 光纤快速固化炉 ',
         'product-15-description': ' 采用进口 LED 紫外光源，多工位设计，能量均匀，适用于光纤连接器、PLC 分路器等产品的 UV 胶水固化 ',
 
-        'product-33-name': 'FPM-1000YFPM-1000Y调速光纤研磨机 ',
+        'product-33-name': 'FPM-1000Y调速光纤研磨机 ',
         'product-33-description': 'FPM-1000Y调速光纤研磨机采用四角加压设计，稳定性好，可加工各种标准光纤连接器，适用于SC/FC/ST/LC/MU等连接头、UPC及APC类型产品的大批量生产，配备数字显示屏。',
 
         'product-17-name': 'YXT-MPODJ-02 MT 插芯全自动点胶机 ',
@@ -5712,20 +5793,25 @@
 
       // 创建模态框HTML
       const modalHTML = `
-          <div id="productModal" class="modal">
-            <div class="modal-content">
-              <button id="closeModal" aria-label="关闭">×</button>
-              <div class="product-carousel-modal">
-                <div class="carousel-container-modal"></div>
-                <button class="carousel-prev-modal" aria-label="上一张">
-                  <i class="fa fa-angle-left"></i>
+          <div id="productModal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+            <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+              <button id="closeModal" aria-label="关闭" class="absolute top-4 right-4 text-gray-700 hover:text-gray-900 text-2xl z-10">×</button>
+              <div class="product-carousel-modal flex-grow relative">
+                <div class="carousel-container-modal h-full flex transition-transform duration-500 ease-in-out"></div>
+                <button class="carousel-prev-modal absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md">
+                  <i class="fa fa-angle-left text-xl"></i>
                 </button>
-                <button class="carousel-next-modal" aria-label="下一张">
-                  <i class="fa fa-angle-right"></i>
+                <button class="carousel-next-modal absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md">
+                  <i class="fa fa-angle-right text-xl"></i>
                 </button>
-                <div class="carousel-dots-modal"></div>
+                <div class="carousel-dots-modal absolute bottom-4 left-0 right-0 flex justify-center gap-2"></div>
               </div>
             </div>
+          </div>
+          <!-- 添加图片查看器HTML -->
+          <div id="image-viewer" class="image-viewer hidden">
+            <button id="close-viewer" aria-label="关闭查看器">×</button>
+            <img id="viewer-image" src="" alt="放大查看图片">
           </div>
         `;
       document.body.insertAdjacentHTML('beforeend', modalHTML);
@@ -5759,13 +5845,45 @@
           img.classList.add('modal-product-image'); // 添加类名以便样式控制
           container.appendChild(img);
 
-          // 添加点击事件以放大图片
-          img.addEventListener('click', function () {
+          / / / 添加点击事件以放大图片 - 移动到这里确保每个图片都绑定事件
+          img.addEventListener('click', function (e) {
+            e.stopPropagation(); // 防止事件冒泡
             const viewerImage = document.getElementById('viewer-image');
             const imageViewer = document.getElementById('image-viewer');
-            viewerImage.src = this.src;
+            const productModal = document.getElementById('productModal');
+
+            // 检查元素是否存在
+            if (!viewerImage || !imageViewer || !productModal) {
+              console.error('图片查看器元素不存在');
+              return;
+            }
+
+            // 检查图片路径是否正确
+            const imgSrc = this.src;
+            console.log('尝试放大图片:', imgSrc);
+            viewerImage.src = imgSrc;
+
+            // 确保查看器显示
             imageViewer.classList.remove('hidden');
+            imageViewer.style.display = 'flex';
+            imageViewer.style.visibility = 'visible';
+            imageViewer.style.opacity = '1';
+
+            // 确保查看器在最上层
+            imageViewer.style.zIndex = '2147483647';
+
+            // 暂时隐藏模态框
+            productModal.style.display = 'none';
             document.body.style.overflow = 'hidden';
+
+            // 验证图片是否加载成功
+            viewerImage.onload = function () {
+              console.log('图片加载成功');
+            };
+            viewerImage.onerror = function () {
+              console.error('图片加载失败:', imgSrc);
+              alert('图片加载失败，请检查路径是否正确');
+            };
           });
 
           // 添加指示器
@@ -5788,6 +5906,51 @@
         // 阻止背景滚动
         document.body.style.overflow = 'hidden';
       }
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM加载完成，初始化图片查看器事件');
+        const closeViewer = document.getElementById('close-viewer');
+        const imageViewer = document.getElementById('image-viewer');
+        const productModal = document.getElementById('productModal');
+
+        if (!closeViewer || !imageViewer || !productModal) {
+          console.error('图片查看器相关元素不存在');
+          return;
+        }
+
+        closeViewer.addEventListener('click', function (e) {
+          e.stopPropagation();
+          console.log('关闭图片查看器');
+          imageViewer.classList.add('hidden');
+          imageViewer.style.display = 'none';
+          // 恢复模态框显示
+          productModal.style.display = 'block';
+          document.body.style.overflow = 'auto';
+        });
+
+        // 点击查看器背景也关闭
+        imageViewer.addEventListener('click', function (e) {
+          if (e.target === imageViewer) {
+            console.log('点击查看器背景关闭');
+            imageViewer.classList.add('hidden');
+            imageViewer.style.display = 'none';
+            productModal.style.display = 'block';
+            document.body.style.overflow = 'auto';
+          }
+        });
+
+        // 按ESC键关闭查看器
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !imageViewer.classList.contains('hidden')) {
+            console.log('按ESC键关闭查看器');
+            imageViewer.classList.add('hidden');
+            imageViewer.style.display = 'none';
+            productModal.style.display = 'block';
+            document.body.style.overflow = 'auto';
+          }
+        });
+      });
 
       // 关闭模态框
       function closeModalFunc() {
@@ -5891,35 +6054,7 @@
       });
     });
   </script>
-  <script>
-    // 图片放大查看功能
-    const imageViewer = document.getElementById('image-viewer');
-    const viewerImage = document.getElementById('viewer-image');
-    const closeViewer = document.getElementById('close-viewer');
 
-    // 为所有轮播图图片添加点击事件
-    document.querySelectorAll('.carousel-slide').forEach(img => {
-      img.addEventListener('click', function () {
-        viewerImage.src = this.src;
-        imageViewer.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // 防止背景滚动
-      });
-    });
-
-    // 关闭查看器
-    closeViewer.addEventListener('click', function () {
-      imageViewer.classList.add('hidden');
-      document.body.style.overflow = ''; // 恢复背景滚动
-    });
-
-    // 点击查看器外部关闭
-    imageViewer.addEventListener('click', function (e) {
-      if (e.target === imageViewer) {
-        imageViewer.classList.add('hidden');
-        document.body.style.overflow = '';
-      }
-    });
-  </script>
 </body>
 
 </html>
