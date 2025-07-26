@@ -26,6 +26,20 @@
       }
     }
   </script>
+
+  <style>
+    .modal {
+      display: none;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .close-modal:hover {
+      color: #ccc;
+    }
+  </style>
   <style type="text/tailwindcss">
 
     .image-viewer {
@@ -961,7 +975,7 @@
               <div class="carousel-container h-full flex transition-transform duration-500">
                 <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/多通道插回损1.webp" alt="RX-002 MPO多通道插回损测试仪"
                   class="w-full h-full object-cover flex-shrink-0">
-                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/多通道插回损2 .webp" alt="RX-002 MPO多通道插回损测试仪侧面"
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/多通道插回损2.webp" alt="RX-002 MPO多通道插回损测试仪侧面"
                   class="w-full h-full object-cover flex-shrink-0">
               </div>
               <button
@@ -2406,7 +2420,7 @@
               <div class="carousel-slides h-full transition-transform duration-500 ease-in-out">
                 <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/多通道插回损1.webp" alt="RX-002 MPO多通道插回损测试仪图片1"
                   class="carousel-slide w-full h-full object-contain" onclick="openModal(this.src, this.alt)">
-                <img src="public/images/宇讯通产品高清图）/宇讯通跳线生产设备（高像素图）/多通道插回损2 .webp" alt="RX-002 MPO多通道插回损测试仪图片2"
+                <img src="public/images/宇讯通产品（高清图）/宇讯通跳线生产设备（高像素图）/多通道插回损2.webp" alt="RX-002 MPO多通道插回损测试仪图片2"
                   class="carousel-slide w-full h-full object-contain" onclick="openModal(this.src, this.alt)">
               </div>
 
@@ -5942,20 +5956,20 @@
               });
             });
    */
-          // 关闭查看器
-          closeViewer.addEventListener('click', function () {
-            imageViewer.classList.add('hidden');
-            document.body.style.overflow = ''; // 恢复背景滚动
-          });
-
-          // 点击查看器外部关闭
-          imageViewer.addEventListener('click', function (e) {
-            if (e.target === imageViewer) {
-              imageViewer.classList.add('hidden');
-              document.body.style.overflow = '';
-            }
-          });
-
+          /*    // 关闭查看器
+             closeViewer.addEventListener('click', function () {
+               imageViewer.classList.add('hidden');
+               document.body.style.overflow = ''; // 恢复背景滚动
+             });
+   
+             // 点击查看器外部关闭
+             imageViewer.addEventListener('click', function (e) {
+               if (e.target === imageViewer) {
+                 imageViewer.classList.add('hidden');
+                 document.body.style.overflow = '';
+               }
+             });
+    */
 
           // 添加指示器
           const dot = document.createElement('button');
@@ -6184,6 +6198,7 @@
 
   document.querySelector('.close-modal').addEventListener('click', function () {
     document.getElementById('imageModal').classList.remove('show');
+    document.body.style.overflow = 'hidden'; // 防止背景滚动
   });
 
   // 点击模态框外部关闭
@@ -6191,8 +6206,10 @@
     const modal = document.getElementById('imageModal');
     if (event.target === modal) {
       modal.classList.remove('show');
+      document.body.style.overflow = ''; // 恢复背景滚动
     }
   });
+
 </script>
 
 </html>
