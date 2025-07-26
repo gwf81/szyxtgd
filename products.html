@@ -27,6 +27,17 @@
     }
   </script>
   <style type="text/tailwindcss">
+
+
+    .carousel-slide {
+  cursor: zoom-in; /* 鼠标悬停显示放大图标 */
+  transition: transform 0.2s ease; /* 轻微缩放效果 */
+}
+
+.carousel-slide:hover {
+  transform: scale(1.02); /* 悬停时轻微放大 */
+}
+
     @layer utilities {
       .content-auto {
         content-visibility: auto;
@@ -153,47 +164,53 @@
               <a href="public/file/2024年宇讯通彩页.pdf"
                 class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom"
                 data-key="navDownload" download>资料下载</a>
+              <div id="image-viewer"
+                class="fixed inset-0 bg-black/90 z-[100001] hidden flex items-center justify-center"
+                style="position: fixed !important; z-index: 100001 !important;">
+                <button id="close-viewer" class="absolute top-4 right-4 text-white text-3xl z-[100001]"
+                  style="position: absolute !important; z-index: 100001 !important;">&times;</button>
+                <img id="viewer-image" src="" alt="放大查看" class="max-w-full max-h-full object-contain z-[100002]"
+                  style="position: relative !important; z-index: 100001 !important;">
+              </div>
+              <div class="flex items-center">
+                <div class="ml-4 flex items-center md:ml-6">
+                  <button type="button"
+                    class="p-1 rounded-full text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
+                    <span class="sr-only">搜索</span>
+                    <i class="fa fa-search text-lg"></i>
+                  </button>
+                </div>
+                <div class="ml-4 flex items-center md:hidden">
+                  <button type="button" id="mobile-menu-button"
+                    class="p-2 rounded-md text-white hover:text-accent focus:outline-none">
+                    <span class="sr-only">打开主菜单</span>
+                    <i class="fa fa-bars text-xl"></i>
+                  </button>
+                </div>
+                <div class="ml-4 flex items-center">
+                  <button id="language-switch" class="p-1 rounded-full text-white hover:text-accent focus:outline-none">
+                    <span data-key="language-button">中文</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="flex items-center">
-            <div class="ml-4 flex items-center md:ml-6">
-              <button type="button"
-                class="p-1 rounded-full text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
-                <span class="sr-only">搜索</span>
-                <i class="fa fa-search text-lg"></i>
-              </button>
-            </div>
-            <div class="ml-4 flex items-center md:hidden">
-              <button type="button" id="mobile-menu-button"
-                class="p-2 rounded-md text-white hover:text-accent focus:outline-none">
-                <span class="sr-only">打开主菜单</span>
-                <i class="fa fa-bars text-xl"></i>
-              </button>
-            </div>
-            <div class="ml-4 flex items-center">
-              <button id="language-switch" class="p-1 rounded-full text-white hover:text-accent focus:outline-none">
-                <span data-key="language-button">中文</span>
-              </button>
+          <!-- 移动端菜单 -->
+          <div id="mobile-menu" class="hidden md:hidden bg-primary/95">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <a href="index.html" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+                data-key="home">首页</a>
+              <a href="index.html#about" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+                data-key="about">公司简介</a>
+              <a href="#" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+                data-key="products">产品中心</a>
+              <a href="index.html#contact" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
+                data-key="contact">联系我们</a>
+              <a href="public/file/2024年宇讯通彩页.pdf"
+                class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="navDownload"
+                download>资料下载</a>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- 移动端菜单 -->
-      <div id="mobile-menu" class="hidden md:hidden bg-primary/95">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="index.html" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
-            data-key="home">首页</a>
-          <a href="index.html#about" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
-            data-key="about">公司简介</a>
-          <a href="#" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
-            data-key="products">产品中心</a>
-          <a href="index.html#contact" class="text-white hover:text-accent block px-3 py-2 text-base font-medium"
-            data-key="contact">联系我们</a>
-          <a href="public/file/2024年宇讯通彩页.pdf"
-            class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="navDownload"
-            download>资料下载</a>
-        </div>
-      </div>
     </nav>
   </header>
 
@@ -3208,18 +3225,16 @@
         "description": "采用三轴移动平台，液体+气体清洁原理，高效非接触清洗，可一人操作多机，清洗效率700-800PCS/H",
         "description_en": "Adopting three-axis mobile platform, liquid + gas cleaning principle, efficient non-contact cleaning, one person can operate multiple machines, cleaning efficiency 700-800PCS/H",
         "features": [
-          "三轴移动平台，清洗无死角",
-          "液体+气体双重清洁，效果彻底",
-          "非接触式清洗，避免划伤端面",
-          "自动化程度高，可一人操作多机",
-          "清洗效率高，700-800PCS/H"
+          "全自动三轴移动平台机械手配套端面清洗机控制器的组合成自动端面清洗机。",
+          "人性化的清洗系统,液量时间参数都可以随意设定,清洗效果更好。高效、非接触无损伤,可更换不同的喷嘴。",
+          "光纤端面清洁机采用的是液体+气体的清洁原理。清洁液能快速溶解光纤端面上的污渍,配合喷射无尘气体将清洁液与油渍污渍一起吹走,不会对端面造成损伤。",
+          "可以真正做到一人操作多机(一人至少可操作3-4台自动机),清洗效率高,单机效率(700-800PCS/H),良率高达90%以上。"
         ],
         "features_en": [
-          "Three-axis mobile platform, no dead angle for cleaning",
-          "Liquid + gas double cleaning, thorough effect",
-          "Non-contact cleaning, avoiding scratching the end face",
-          "High degree of automation, one person can operate multiple machines",
-          "High cleaning efficiency, 700-800PCS/H"
+          "Automatic three-axis mobile platform manipulator matching end face cleaning machine controller combination into an automatic end face cleaning machine.",
+          "Humanized cleaning system, liquid quantity time parameters can be set at will, better cleaning effect. Highly efficient, non-contact, non-damaging, replaceable with different nozzles.",
+          "The fiber end cleaning machine adopts the cleaning principle of liquid + gas. The cleaning liquid can quickly dissolve the stains on the optical fiber end face, and with the spray of dust-free gas body, the cleaning liquid and oil stains will be blown away together without causing damage to the end face.",
+          "Can truly achieve one person operating multiple machines (at least 3-4 automata can be operated by one person), with high cleaning efficiency and single machine efficiency (700-800PCS/H), high yield rate of over 90%."
         ]
       },
       {
@@ -3677,16 +3692,6 @@
             defaultImage.classList.add('hidden');
           }
           initProduct12Carousel();
-        }
-      } else if (productId === 23) {
-        const product23Carousel = document.getElementById('product-23-carousel');
-        if (product23Carousel) {
-          product23Carousel.classList.remove('hidden');
-          const defaultImage = product23Carousel.nextElementSibling;
-          if (defaultImage && defaultImage.classList.contains('default-product-image')) {
-            defaultImage.classList.add('hidden');
-          }
-          initProduct23Carousel();
         }
       } else if (productId === 23) {
         const product23Carousel = document.getElementById('product-23-carousel');
@@ -5174,7 +5179,7 @@
       updateCarouselDots12();
 
       // 启动自动播放
-      product12CarouselInterval = setInterval(nextSlide12, 5000);
+      product12CarouselInterval = setInterval(nextSlide12, 8000);
 
       // 添加事件监听
       document.querySelector('#product-12-carousel .carousel-prev').addEventListener('click', prevSlide12);
@@ -5246,7 +5251,7 @@
       });
 
       // 启动自动轮播
-      product31CarouselInterval = setInterval(nextSlide31, 5000);
+      product31CarouselInterval = setInterval(nextSlide31, 8000);
     }
 
     function updateCarouselPosition31() {
@@ -5308,7 +5313,7 @@
       });
 
       // 启动自动轮播
-      product23CarouselInterval = setInterval(nextSlide23, 5000);
+      product23CarouselInterval = setInterval(nextSlide23, 8000);
     }
 
     function updateCarouselPosition23() {
@@ -5353,7 +5358,7 @@
       updateCarouselDots44();
 
       // 启动自动播放
-      product44CarouselInterval = setInterval(nextSlide44, 5000);
+      product44CarouselInterval = setInterval(nextSlide44, 8000);
 
       // 添加事件监听
       document.querySelector('#product-44-carousel .carousel-prev').addEventListener('click', prevSlide44);
@@ -5460,7 +5465,7 @@
       updateCarouselDots();
 
       // 启动自动播放
-      product7CarouselInterval = setInterval(nextSlide, 5000);
+      product7CarouselInterval = setInterval(nextSlide, 8000);
 
       // 添加事件监听
       document.querySelector('#product-7-carousel .carousel-prev').addEventListener('click', prevSlide);
@@ -5490,7 +5495,7 @@
     // 启动轮播
     function startProduct7Carousel() {
       if (!product7CarouselInterval) {
-        product7CarouselInterval = setInterval(nextSlide, 5000);
+        product7CarouselInterval = setInterval(nextSlide, 8000);
       }
     }
 
@@ -5593,7 +5598,7 @@
         nextBtn.addEventListener('click', nextImage);
 
         // 自动轮播
-        let autoplayInterval = setInterval(nextImage, 5000);
+        let autoplayInterval = setInterval(nextImage, 8000);
 
         // 鼠标悬停时暂停自动轮播
         carousel.addEventListener('mouseenter', () => {
@@ -5602,7 +5607,7 @@
 
         // 鼠标离开时恢复自动轮播
         carousel.addEventListener('mouseleave', () => {
-          autoplayInterval = setInterval(nextImage, 5000);
+          autoplayInterval = setInterval(nextImage, 8000);
         });
       });
     });
@@ -5751,7 +5756,17 @@
           const img = document.createElement('img');
           img.src = src;
           img.alt = `产品 ${productId} 图片 ${index + 1}`;
+          img.classList.add('modal-product-image'); // 添加类名以便样式控制
           container.appendChild(img);
+
+          // 添加点击事件以放大图片
+          img.addEventListener('click', function () {
+            const viewerImage = document.getElementById('viewer-image');
+            const imageViewer = document.getElementById('image-viewer');
+            viewerImage.src = this.src;
+            imageViewer.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+          });
 
           // 添加指示器
           const dot = document.createElement('button');
@@ -5815,7 +5830,7 @@
       // 开始自动轮播
       function startAutoplay() {
         stopAutoplay();
-        autoplayInterval = setInterval(nextSlide, 5000);
+        autoplayInterval = setInterval(nextSlide, 8000);
       }
 
       // 停止自动轮播
@@ -5874,6 +5889,35 @@
           nextSlide();
         }
       });
+    });
+  </script>
+  <script>
+    // 图片放大查看功能
+    const imageViewer = document.getElementById('image-viewer');
+    const viewerImage = document.getElementById('viewer-image');
+    const closeViewer = document.getElementById('close-viewer');
+
+    // 为所有轮播图图片添加点击事件
+    document.querySelectorAll('.carousel-slide').forEach(img => {
+      img.addEventListener('click', function () {
+        viewerImage.src = this.src;
+        imageViewer.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // 防止背景滚动
+      });
+    });
+
+    // 关闭查看器
+    closeViewer.addEventListener('click', function () {
+      imageViewer.classList.add('hidden');
+      document.body.style.overflow = ''; // 恢复背景滚动
+    });
+
+    // 点击查看器外部关闭
+    imageViewer.addEventListener('click', function (e) {
+      if (e.target === imageViewer) {
+        imageViewer.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>
