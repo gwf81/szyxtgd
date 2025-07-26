@@ -312,12 +312,8 @@
           <a href="public/file/2024年宇讯通彩页.pdf"
             class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="navDownload"
             download>资料下载</a>
-          <!-- 添加语言切换按钮 -->
-          <button id="language-switch"
-            class="text-white hover:text-accent block px-3 py-2 text-base font-medium w-full text-left"
-            data-key="language-button">中文</button>
+
         </div>
-      </div>
     </nav>
   </header>
 
@@ -5920,46 +5916,35 @@
           img.classList.add('modal-product-image'); // 添加类名以便样式控制
           container.appendChild(img);
 
-          // 添加点击事件以放大图片 - 移动到这里确保每个图片都绑定事件
-          img.addEventListener('click', function (e) {
-            e.stopPropagation(); // 防止事件冒泡
-            const viewerImage = document.getElementById('viewer-image');
-            const imageViewer = document.getElementById('image-viewer');
-            const productModal = document.getElementById('productModal');
 
-            // 检查元素是否存在
-            if (!viewerImage || !imageViewer || !productModal) {
-              console.error('图片查看器元素不存在');
-              return;
-            }
+          // 图片放大查看功能
+          const imageViewer = document.getElementById('image-viewer');
+          const viewerImage = document.getElementById('viewer-image');
+          const closeViewer = document.getElementById('close-viewer');
 
-            // 检查图片路径是否正确
-            const imgSrc = this.src;
-            console.log('尝试放大图片:', imgSrc);
-            viewerImage.src = imgSrc;
-
-            // 确保查看器显示
-            imageViewer.classList.remove('hidden');
-            imageViewer.style.display = 'flex';
-            imageViewer.style.visibility = 'visible';
-            imageViewer.style.opacity = '1';
-
-            // 确保查看器在最上层
-            imageViewer.style.zIndex = '2147483647';
-
-            // 暂时隐藏模态框
-            productModal.style.display = 'none';
-            document.body.style.overflow = 'hidden';
-
-            // 验证图片是否加载成功
-            viewerImage.onload = function () {
-              console.log('图片加载成功');
-            };
-            viewerImage.onerror = function () {
-              console.error('图片加载失败:', imgSrc);
-              alert('图片加载失败，请检查路径是否正确');
-            };
+          // 为所有轮播图图片添加点击事件
+          document.querySelectorAll('.carousel-slide').forEach(img => {
+            img.addEventListener('click', function () {
+              viewerImage.src = this.src;
+              imageViewer.classList.remove('hidden');
+              document.body.style.overflow = 'hidden'; // 防止背景滚动
+            });
           });
+
+          // 关闭查看器
+          closeViewer.addEventListener('click', function () {
+            imageViewer.classList.add('hidden');
+            document.body.style.overflow = ''; // 恢复背景滚动
+          });
+
+          // 点击查看器外部关闭
+          imageViewer.addEventListener('click', function (e) {
+            if (e.target === imageViewer) {
+              imageViewer.classList.add('hidden');
+              document.body.style.overflow = '';
+            }
+          });
+
 
           // 添加指示器
           const dot = document.createElement('button');
