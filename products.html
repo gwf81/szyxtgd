@@ -60,7 +60,7 @@
   cursor: pointer;
 }
 
-/* 移动端适配 - 新增 */
+/* 移动端适配 - 增强版 */
 @media (max-width: 768px) {
   #close-viewer {
     top: 10px;
@@ -87,6 +87,21 @@
   #viewer-image {
     max-width: 95%;
     max-height: 80vh;
+  }
+
+  /* 新增：优化产品详情模态框 */
+  #productModal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-width: 100% !important;
+    border-radius: 8px;
+  }
+
+  .carousel-container-modal img {
+    object-fit: contain;
+    max-height: 60vh;
   }
 }
 
@@ -5704,7 +5719,7 @@
     // 产品详情模态框样式
     const style = document.createElement('style');
     style.textContent = `
-        #productModal { z-index: 1000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; }
+        #productModal { z-index: 1000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; padding: 10px; }
         #productModal.show { display: flex; }
         .modal-content { position: relative; width: 100%; height: 100%; max-width: 1200px; max-height: 90vh; }
         .product-carousel-modal { height: 100%; position: relative; overflow: hidden; }
@@ -5720,9 +5735,18 @@
         .carousel-dots-modal button.active { background-color: white; }
         #closeModal { position: absolute; top: 20px; right: 20px; background-color: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; z-index: 20; }
         #closeModal:hover { background-color: rgba(0,0,0,0.8); }
+
+        /* 移动端适配 - 新增 */
+        @media (max-width: 768px) {
+          .modal-content { max-width: 100% !important; }
+          .carousel-container-modal img { max-height: 60vh; }
+          #closeModal { top: 10px; right: 10px; width: 30px; height: 30px; font-size: 16px; }
+          .carousel-prev-modal, .carousel-next-modal { width: 30px; height: 30px; font-size: 16px; }
+          .carousel-dots-modal { bottom: 10px; gap: 6px; }
+          .carousel-dots-modal button { width: 8px; height: 8px; }
+        }
       `;
     document.head.appendChild(style);
-
     // 产品详情模态框功能
     document.addEventListener('DOMContentLoaded', function () {
       // 产品图片数据
