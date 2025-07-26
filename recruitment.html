@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宇讯通光电 - 人才招聘</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0A2463',
+            secondary: '#3E92CC',
+            accent: '#F18805',
+            dark: '#121212',
+            light: '#F8F9FA'
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .text-shadow-lg {
+        text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter bg-light text-dark">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <nav class="bg-primary/95 text-white shadow-lg">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex-shrink-0 flex items-center">
+              <img src="public/images/LOGO.webp" alt="LOGO" class="h-12 mr-2">
+              <span class="text-xl font-bold" data-key="company-name">宇讯通光电</span>
+            </a>
+            <div class="hidden md:ml-10 md:flex md:space-x-8">
+              <a href="index.html" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom" data-key="home">首页</a>
+              <a href="index.html#about" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom" data-key="about">公司简介</a>
+              <a href="products.html" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom" data-key="products">产品中心</a>
+              <a href="#" class="text-accent border-b-2 border-accent px-3 py-2 text-sm font-medium transition-custom" data-key="recruitment">人才招聘</a>
+              <a href="index.html#contact" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom" data-key="contact">联系我们</a>
+              <a href="public/file/2024年宇讯通彩页.pdf" class="text-white hover:text-accent px-3 py-2 text-sm font-medium transition-custom" data-key="navDownload" download>资料下载</a>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="ml-4 flex items-center md:ml-6">
+              <button type="button" class="p-1 rounded-full text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
+                <span class="sr-only">搜索</span>
+                <i class="fa fa-search text-lg"></i>
+              </button>
+            </div>
+            <div class="ml-4 flex items-center md:hidden">
+              <button type="button" id="mobile-menu-button" class="p-2 rounded-md text-white hover:text-accent focus:outline-none">
+                <span class="sr-only">打开主菜单</span>
+                <i class="fa fa-bars text-xl"></i>
+              </button>
+            </div>
+            <div class="ml-4 flex items-center">
+              <button id="language-switch" class="p-1 rounded-full text-white hover:text-accent focus:outline-none">
+                <span data-key="language-button">中文</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 移动端菜单 -->
+      <div id="mobile-menu" class="hidden md:hidden bg-primary/95">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="index.html" class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="home">首页</a>
+          <a href="index.html#about" class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="about">公司简介</a>
+          <a href="products.html" class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="products">产品中心</a>
+          <a href="#" class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="recruitment">人才招聘</a>
+          <a href="index.html#contact" class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="contact">联系我们</a>
+          <a href="public/file/2024年宇讯通彩页.pdf" class="text-white hover:text-accent block px-3 py-2 text-base font-medium" data-key="navDownload" download>资料下载</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 英雄区 -->
+  <section class="relative pt-16">
+    <div class="relative h-[50vh] bg-gradient-to-r from-primary to-secondary overflow-hidden flex items-center justify-center">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white leading-tight text-shadow-lg mb-6" data-key="heroTitle">
+          人才招聘
+        </h1>
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-3xl mx-auto" data-key="heroSubtitle">
+          加入我们，共创未来
+        </p>
+        <a href="#positions" class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md text-base font-medium transition-custom shadow-lg hover:shadow-xl" data-key="heroButton">
+          查看职位
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 公司简介 -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4" data-key="aboutTitle">公司简介</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed" data-key="aboutContent">
+        <p class="mb-4">宇讯通光电是一家专业的光纤连接器及光纤设备制造商，拥有22年光纤连接器生产经验和15年设备制造经验。公司致力于为客户提供高品质的产品和服务，拥有30+项专利技术，是国家高新技术企业。</p>
+        <p>我们重视人才的培养和发展，提供良好的工作环境和发展空间，期待有才华、有激情的您加入我们的团队，共同创造更加美好的未来。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 招聘理念 -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4" data-key="philosophyTitle">招聘理念</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md card-hover">
+          <div class="text-accent text-4xl mb-4"><i class="fa fa-lightbulb-o"></i></div>
+          <h3 class="text-xl font-semibold mb-3 text-primary" data-key="philosophy1Title">创新思维</h3>
+          <p class="text-gray-700" data-key="philosophy1Content">我们鼓励员工提出创新的想法和解决方案，为公司的发展注入新的活力。</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md card-hover">
+          <div class="text-accent text-4xl mb-4"><i class="fa fa-users"></i></div>
+          <h3 class="text-xl font-semibold mb-3 text-primary" data-key="philosophy2Title">团队合作</h3>
+          <p class="text-gray-700" data-key="philosophy2Content">我们相信团队的力量，致力于打造一个和谐、高效的工作氛围。</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md card-hover">
+          <div class="text-accent text-4xl mb-4"><i class="fa fa-line-chart"></i></div>
+          <h3 class="text-xl font-semibold mb-3 text-primary" data-key="philosophy3Title">共同成长</h3>
+          <p class="text-gray-700" data-key="philosophy3Content">我们为员工提供广阔的发展空间和学习机会，实现个人与公司的共同成长。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 职位列表 -->
+  <section id="positions" class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4" data-key="positionsTitle">热招职位</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <!-- 职位卡片 1 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden mb-6 card-hover">
+          <div class="bg-primary/5 p-6">
+            <div class="flex flex-wrap justify-between items-center">
+              <h3 class="text-xl font-bold text-primary mb-2" data-key="position1Title">机械工程师</h3>
+              <span class="bg-accent text-white px-3 py-1 rounded-full text-sm" data-key="position1Type">全职</span>
+            </div>
+            <div class="flex flex-wrap gap-4 text-gray-600 mb-2">
+              <span><i class="fa fa-map-marker mr-1"></i> <span data-key="position1Location">深圳</span></span>
+              <span><i class="fa fa-money mr-1"></i> <span data-key="position1Salary">10K-20K</span></span>
+              <span><i class="fa fa-graduation-cap mr-1"></i> <span data-key="position1Education">本科及以上</span></span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="mb-4">
+              <h4 class="font-semibold text-primary mb-2" data-key="position1Responsibilities">工作职责：</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1" data-key="position1ResponsibilitiesContent">
+                <li>负责产品的机械结构设计和开发</li>
+                <li>参与产品的 prototype 制作和测试</li>
+                <li>与电子工程师协作，完成产品的整体设计</li>
+                <li>编写产品的技术文档</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-primary mb-2" data-key="position1Requirements">任职要求：</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1" data-key="position1RequirementsContent">
+                <li>机械设计、机电一体化等相关专业本科及以上学历</li>
+                <li>有2年以上相关工作经验</li>
+                <li>熟练使用 SolidWorks、AutoCAD 等设计软件</li>
+                <li>良好的沟通能力和团队合作精神</li>
+              </ul>
+            </div>
+            <div class="mt-6 text-right">
+              <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-md text-base font-medium transition-custom" data-key="position1Apply">申请职位</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 职位卡片 2 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden mb-6 card-hover">
+          <div class="bg-primary/5 p-6">
+            <div class="flex flex-wrap justify-between items-center">
+              <h3 class="text-xl font-bold text-primary mb-2" data-key="position2Title">电子工程师</h3>
+              <span class="bg-accent text-white px-3 py-1 rounded-full text-sm" data-key="position2Type">全职</span>
+            </div>
+            <div class="flex flex-wrap gap-4 text-gray-600 mb-2">
+              <span><i class="fa fa-map-marker mr-1"></i> <span data-key="position2Location">深圳</span></span>
+              <span><i class="fa fa-money mr-1"></i> <span data-key="position2Salary">12K-25K</span></span>
+              <span><i class="fa fa-graduation-cap mr-1"></i> <span data-key="position2Education">本科及以上</span></span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="mb-4">
+              <h4 class="font-semibold text-primary mb-2" data-key="position2Responsibilities">工作职责：</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1" data-key="position2ResponsibilitiesContent">
+                <li>负责产品的电路设计和开发</li>
+                <li>编写嵌入式软件程序</li>
+                <li>参与产品的测试和调试</li>
+                <li>与机械工程师协作，完成产品的整体设计</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-primary mb-2" data-key="position2Requirements">任职要求：</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1" data-key="position2RequirementsContent">
+                <li>电子、电气、自动化等相关专业本科及以上学历</li>
+                <li>有2年以上相关工作经验</li>
+                <li>熟练使用 Altium Designer、Keil 等设计软件</li>
+                <li>熟悉 C/C++ 编程语言</li>
+              </ul>
+            </div>
+            <div class="mt-6 text-right">
+              <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-md text-base font-medium transition-custom" data-key="position2Apply">申请职位</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 职位卡片 3 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden mb-6 card-hover">
+          <div class="bg-primary/5 p-6">
+            <div class="flex flex-wrap justify-between items-center">
+              <h3 class="text-xl font-bold text-primary mb-2" data-key="position3Title">销售工程师</h3>
+              <span class="bg-accent text-white px-3 py-1 rounded-full text-sm" data-key="position3Type">全职</span>
+            </div>
+            <div class="flex flex-wrap gap-4 text-gray-600 mb-2">
+              <span><i class="fa fa-map-marker mr-1"></i> <span data-key="position3Location">全国</span></span>
+              <span><i class="fa fa-money mr-1"></i> <span data-key="position3Salary">8K-15K+提成</span></span>
+              <span><i class="fa fa-graduation-cap mr-1"></i> <span data-key="position3Education">大专及以上</span></span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="mb-4">
+              <h4 class="font-semibold text-primary mb-2" data-key="position3Responsibilities">工作职责：</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1" data-key="position3ResponsibilitiesContent">
+                <li>负责公司产品的销售和推广</li>
+                <li>开拓新客户，维护老客户关系</li>
+                <li>完成销售目标</li>
+                <li>收集市场信息，反馈客户需求</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-primary mb-2" data-key="position3Requirements">任职要求：</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1" data-key="position3RequirementsContent">
+                <li>市场营销、电子、机械等相关专业大专及以上学历</li>
+                <li>有1年以上销售工作经验，有光纤行业经验者优先</li>
+                <li>良好的沟通能力和谈判技巧</li>
+                <li>能适应出差</li>
+              </ul>
+            </div>
+            <div class="mt-6 text-right">
+              <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-md text-base font-medium transition-custom" data-key="position3Apply">申请职位</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4" data-key="contactTitle">联系我们</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-6 text-primary" data-key="contactInfoTitle">联系方式</h3>
+          <div class="space-y-4 text-gray-700">
+            <div class="flex items-start">
+              <div class="text-accent text-xl mr-4 mt-1"><i class="fa fa-map-marker"></i></div>
+              <div>
+                <h4 class="font-medium text-primary" data-key="contactAddressTitle">公司地址</h4>
+                <p data-key="contactAddress">深圳市宝安区西乡街道固戍社区宝安大道4834号</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="text-accent text-xl mr-4 mt-1"><i class="fa fa-phone"></i></div>
+              <div>
+                <h4 class="font-medium text-primary" data-key="contactPhoneTitle">联系电话</h4>
+                <p data-key="contactPhone">0755-12345678</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="text-accent text-xl mr-4 mt-1"><i class="fa fa-envelope"></i></div>
+              <div>
+                <h4 class="font-medium text-primary" data-key="contactEmailTitle">电子邮箱</h4>
+                <p data-key="contactEmail">hr@yuxuntong.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-6 text-primary" data-key="contactFormTitle">立即申请</h3>
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700 mb-2" data-key="contactFormName">姓名</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" placeholder="请输入您的姓名">
+            </div>
+            <div class="mb-4">
+              <label for="phone" class="block text-gray-700 mb-2" data-key="contactFormPhone">电话</label>
+              <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" placeholder="请输入您的电话">
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 mb-2" data-key="contactFormEmail">邮箱</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" placeholder="请输入您的邮箱">
+            </div>
+            <div class="mb-4">
+              <label for="position" class="block text-gray-700 mb-2" data-key="contactFormPosition">应聘职位</label>
+              <select id="position" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                <option value="" data-key="contactFormPositionOption1">请选择应聘职位</option>
+                <option value="mechanical-engineer" data-key="contactFormPositionOption2">机械工程师</option>
+                <option value="electronic-engineer" data-key="contactFormPositionOption3">电子工程师</option>
+                <option value="sales-engineer" data-key="contactFormPositionOption4">销售工程师</option>
+              </select>
+            </div>
+            <div class="mb-6">
+              <label for="resume" class="block text-gray-700 mb-2" data-key="contactFormResume">上传简历</label>
+              <input type="file" id="resume" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+            </div>
+            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md text-base font-medium transition-custom" data-key="contactFormSubmit">提交申请</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-primary text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4" data-key="footerAbout">关于我们</h3>
+          <p class="text-gray-300" data-key="footerAboutContent">宇讯通光电是专业的光纤连接器及光纤设备制造商，拥有22年行业经验，30+项专利技术。</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4" data-key="footerQuickLinks">快速链接</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><a href="index.html" class="hover:text-accent transition-custom" data-key="footerHome">首页</a></li>
+            <li><a href="index.html#about" class="hover:text-accent transition-custom" data-key="footerAboutLink">公司简介</a></li>
+            <li><a href="products.html" class="hover:text-accent transition-custom" data-key="footerProducts">产品中心</a></li>
+            <li><a href="#" class="hover:text-accent transition-custom" data-key="footerRecruitment">人才招聘</a></li>
+            <li><a href="index.html#contact" class="hover:text-accent transition-custom" data-key="footerContact">联系我们</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4" data-key="footerProducts">产品中心</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><a href="products.html" class="hover:text-accent transition-custom" data-key="footerProduct1">光纤连接器</a></li>
+            <li><a href="products.html" class="hover:text-accent transition-custom" data-key="footerProduct2">光纤设备</a></li>
+            <li><a href="products.html" class="hover:text-accent transition-custom" data-key="footerProduct3">光纤工具</a></li>
+            <li><a href="products.html" class="hover:text-accent transition-custom" data-key="footerProduct4">其他配件</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4" data-key="footerContact">联系我们</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center"><i class="fa fa-map-marker mr-2"></i> <span data-key="footerAddress">深圳市宝安区西乡街道固戍社区宝安大道4834号</span></li>
+            <li class="flex items-center"><i class="fa fa-phone mr-2"></i> <span data-key="footerPhone">0755-12345678</span></li>
+            <li class="flex items-center"><i class="fa fa-envelope mr-2"></i> <span data-key="footerEmail">info@yuxuntong.com</span></li>
+          </ul>
+          <div class="mt-4 flex space-x-4">
+            <a href="#" class="text-white hover:text-accent transition-custom"><i class="fa fa-weixin text-xl"></i></a>
+            <a href="#" class="text-white hover:text-accent transition-custom"><i class="fa fa-weibo text-xl"></i></a>
+            <a href="#" class="text-white hover:text-accent transition-custom"><i class="fa fa-linkedin text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400" data-key="footerCopyright">
+        <p>© 2024 宇讯通光电. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 移动端菜单切换
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        navbar.classList.add('bg-primary');
+        navbar.classList.remove('bg-primary/95');
+      } else {
+        navbar.classList.add('bg-primary/95');
+        navbar.classList.remove('bg-primary');
+      }
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

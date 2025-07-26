@@ -9,6 +9,9 @@
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@egoist/tailwindcss - icons@latest/dist/tailwindcss - icons.min.css">
 
 
   <script>
@@ -947,9 +950,15 @@
             <div class="flex space-x-4">
               <a href="#"
                 class="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-custom"
-                onclick="showImage()">
+                onclick="showWXImage()">
                 <i class="fa fa-weixin text-xl"></i>
               </a>
+              <a href="#"
+                class="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-custom"
+                onclick="showDYImage()">
+                <img src="public/images/douyin-icon.png" alt="抖音" class="w-8 h-8">
+              </a>
+
               <!--       <a href="#"
                 class="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-custom">
                 <i class="fa fa-weibo text-xl"></i>
@@ -982,12 +991,13 @@
             专业从事光通信器件及设备研发、生产和销售的高新技术企业，为全球客户提供优质的光纤通信解决方案。
           </p>
           <div class="flex space-x-4">
-            <a href="#" class="text-white/70 hover:text-white transition-custom" onclick="showImage()">
+            <a href="#" class="text-white/70 hover:text-white transition-custom" onclick="showWXImage()">
               <i class="fa fa-weixin text-xl"></i>
             </a>
-            <a href="#" class="text-white/70 hover:text-white transition-custom" onclick="showImage()">
-              <i class="fa fa-douyin text-xl"></i>
+            <a href="#" class="text-white/70 hover:text-white transition-custom" onclick="showDYImage()">
+              <img src="public/images/douyin-icon.png" alt="抖音" class="w-8 h-8">
             </a>
+
           </div>
         </div>
 
@@ -1052,6 +1062,7 @@
           <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
             <p data-key="copyright">© 2024 深圳市宇讯通光电有限公司 版权所有 </p><a
               href="https://beian.miit.gov.cn/">粤ICP备2025444719号-1</a>
+            <p>design by gwf</p>
           </div>
           <div class="flex space-x-6">
             <a href="#" class="text-white/50 hover:text-white text-sm transition-custom lang"
@@ -1713,9 +1724,34 @@
     });
 
     // 显示图片的方法
-    function showImage() {
+    function showWXImage() {
       const img = document.createElement('img');
       img.src = 'public/images/weixin.webp';
+      img.style.maxWidth = '100%';
+      img.style.maxHeight = '100%';
+
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.appendChild(img);
+
+      overlay.onclick = function () {
+        document.body.removeChild(overlay);
+      };
+
+      document.body.appendChild(overlay);
+    }
+
+    function showDYImage() {
+      const img = document.createElement('img');
+      img.src = 'public/images/szyxtgd-dy.jpg';
       img.style.maxWidth = '100%';
       img.style.maxHeight = '100%';
 

@@ -2488,6 +2488,9 @@
             <a href="#" class="text-gray-400 hover:text-accent transition-custom" onclick="showImage()">
               <i class="fa fa-weixin text-xl"></i>
             </a>
+            <a href="#" class="text-white/70 hover:text-white transition-custom" onclick="showDYImage()">
+              <img src="public/images/douyin-icon.png" alt="抖音" class="w-8 h-8">
+            </a>
             <!--  <a href="#" class="text-gray-400 hover:text-accent transition-custom">
               <i class="fa fa-weibo text-xl"></i>
             </a>
@@ -2562,6 +2565,7 @@
       </div>
       <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
         <p data-key="copyright">© 2024 深圳市宇讯通光电有限公司 版权所有 </p><a href="https://beian.miit.gov.cn/">粤ICP备2025444719号-1</a>
+        <p>design by gwf</p>
       </div>
     </div>
   </footer>
@@ -3881,6 +3885,34 @@
 
 
     // 显示图片的方法
+
+
+    function showDYImage() {
+      const img = document.createElement('img');
+      img.src = 'public/images/szyxtgd-dy.jpg';
+      img.style.maxWidth = '100%';
+      img.style.maxHeight = '100%';
+
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.appendChild(img);
+
+      overlay.onclick = function () {
+        document.body.removeChild(overlay);
+      };
+
+      document.body.appendChild(overlay);
+    }
+
+
     function showImage() {
       const img = document.createElement('img');
       img.src = 'public/images/weixin.webp';
