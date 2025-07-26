@@ -8,6 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <script>
     tailwind.config = {
       theme: {
@@ -75,6 +77,18 @@
                 <i class="fa fa-search text-lg"></i>
               </button>
             </div>
+            <div class="ml-4 flex items-center">
+              <div class="relative">
+                <button id="language-toggle" class="flex items-center justify-center h-8 w-8 rounded-full bg-white/10 text-white hover:bg-white/20 transition-custom">
+                  <span class="lang" key="currentLang">中文</span>
+                  <i class="fa fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-50">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 language-option" data-lang="zh">中文</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 language-option" data-lang="en">English</a>
+                </div>
+              </div>
+            </div>
             <div class="ml-4 flex items-center md:hidden">
               <button type="button" id="mobile-menu-button" class="p-2 rounded-md text-white hover:text-accent focus:outline-none">
                 <span class="sr-only">打开主菜单</span>
@@ -107,15 +121,20 @@
   <section class="relative pt-16">
     <div class="relative h-[50vh] bg-gradient-to-r from-primary to-secondary overflow-hidden flex items-center justify-center">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white leading-tight text-shadow-lg mb-6" data-key="heroTitle">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white leading-tight text-shadow-lg mb-6 lang" key="heroTitle">
           人才招聘
         </h1>
-        <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-3xl mx-auto" data-key="heroSubtitle">
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-3xl mx-auto lang" key="heroSubtitle">
           加入我们，共创未来
         </p>
-        <a href="#positions" class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md text-base font-medium transition-custom shadow-lg hover:shadow-xl" data-key="heroButton">
-          查看职位
-        </a>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#positions" class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md text-base font-medium transition-custom shadow-lg hover:shadow-xl lang" key="heroButton1">
+            查看职位
+          </a>
+          <a href="#contact" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-6 py-3 rounded-md text-base font-medium transition-custom shadow-lg hover:shadow-xl lang" key="heroButton2">
+            联系我们
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -152,7 +171,7 @@
           <h3 class="text-xl font-semibold mb-3 text-primary" data-key="philosophy2Title">团队合作</h3>
           <p class="text-gray-700" data-key="philosophy2Content">我们相信团队的力量，致力于打造一个和谐、高效的工作氛围。</p>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow-md card-hover">
+        <div class="bg-white p-8 rounded-lg shadow-md product-card-hover">
           <div class="text-accent text-4xl mb-4"><i class="fa fa-line-chart"></i></div>
           <h3 class="text-xl font-semibold mb-3 text-primary" data-key="philosophy3Title">共同成长</h3>
           <p class="text-gray-700" data-key="philosophy3Content">我们为员工提供广阔的发展空间和学习机会，实现个人与公司的共同成长。</p>
@@ -272,7 +291,7 @@
               <h4 class="font-semibold text-primary mb-2" data-key="position3Requirements">任职要求：</h4>
               <ul class="list-disc list-inside text-gray-700 space-y-1" data-key="position3RequirementsContent">
                 <li>市场营销、电子、机械等相关专业大专及以上学历</li>
-                <li>有1年以上销售工作经验，有光纤行业经验者优先</li>
+                <li>有1年以上销售experienced，有光纤行业经验者优先</li>
                 <li>良好的沟通能力和谈判技巧</li>
                 <li>能适应出差</li>
               </ul>
@@ -364,13 +383,14 @@
           <p class="text-gray-300" data-key="footerAboutContent">宇讯通光电是专业的光纤连接器及光纤设备制造商，拥有22年行业经验，30+项专利技术。</p>
         </div>
         <div>
-          <h3 class="text-xl font-bold mb-4" data-key="footerQuickLinks">快速链接</h3>
+          <h3 class="text-xl font-bold mb-4 lang" key="footerQuickLinks">快速链接</h3>
           <ul class="space-y-2 text-gray-300">
-            <li><a href="index.html" class="hover:text-accent transition-custom" data-key="footerHome">首页</a></li>
-            <li><a href="index.html#about" class="hover:text-accent transition-custom" data-key="footerAboutLink">公司简介</a></li>
-            <li><a href="products.html" class="hover:text-accent transition-custom" data-key="footerProducts">产品中心</a></li>
-            <li><a href="#" class="hover:text-accent transition-custom" data-key="footerRecruitment">人才招聘</a></li>
-            <li><a href="index.html#contact" class="hover:text-accent transition-custom" data-key="footerContact">联系我们</a></li>
+            <li><a href="index.html" class="hover:text-accent transition-custom lang" key="footerHome">首页</a></li>
+            <li><a href="index.html#about" class="hover:text-accent transition-custom lang" key="footerAboutLink">公司简介</a></li>
+            <li><a href="products.html" class="hover:text-accent transition-custom lang" key="footerProducts">产品中心</a></li>
+            <li><a href="#" class="hover:text-accent transition-custom lang" key="footerRecruitment">人才招聘</a></li>
+            <li><a href="index.html#company-detail" class="hover:text-accent transition-custom lang" key="footerCompanyDetail">公司详细介绍</a></li>
+            <li><a href="index.html#contact" class="hover:text-accent transition-custom lang" key="footerContact">联系我们</a></li>
           </ul>
         </div>
         <div>
